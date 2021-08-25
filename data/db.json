@@ -11,12 +11,29 @@
       "title": "Make marketing email",
       "details": "Lorem ipsum",
       "complete": false
+    }
+    
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "welcome to the new blog",
+      "body": "lorem ipsum",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
     },
     {
-      "title": "do do do",
-      "details": "yes yes yes",
-      "complete": false,
-      "id": 5
+      "id": 2,
+      "title": "Top 5 CSS tricks",
+      "body": "lorem ipsum",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
     }
   ]
 }
