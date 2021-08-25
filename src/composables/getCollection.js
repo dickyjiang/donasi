@@ -8,7 +8,7 @@ const getCollection = (collection) => {
   let collectionRef = projectFirestore.collection(collection)
     .orderBy('createdAt')
 
-    collectionRef.onSnapshot((snap) => {
+  const unsub =  collectionRef.onSnapshot((snap) => {
       let results = []
       snap.docs.forEach(doc => {
         doc.data().createdAt && results.push({ ...doc.data(), id: doc.id })
@@ -22,6 +22,7 @@ const getCollection = (collection) => {
     })
 
     watchEffect((onInvalidate) => {
+      //unsub from prev collection when watcher is stopped ( component unmount)
       onInvalidate(() => unsub())
     })
 
