@@ -49,10 +49,7 @@ const routes = [
     path: '/add',
     name: 'addProject',
     component: AddProject,
-  }
-
-
-
+  },
 
 
   

@@ -3,9 +3,9 @@
       <div class="actions">
           <h3 @click="showDetails = !showDetails">{{ project.title }}</h3>
           <div class="icons">
-              <span class="material-icons">edit</span>
-              <span @click="deleteProject" class="material-icons">delete</span>
-               <span @click="toggleComplete" class="material-icons">done</span>
+            <span class="material-icons">edit</span>
+            <span @click="deleteProject" class="material-icons">delete</span>
+            <span @click="toggleComplete" class="material-icons">done</span>
           </div>
       </div>
       <div v-if="showDetails" class="details">

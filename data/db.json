@@ -13,25 +13,10 @@
       "complete": false
     },
     {
-      "id": 3
-    },
-    {
-      "title": "make new new",
-      "details": "yay ay ayaya",
-      "complete": false,
-      "id": 4
-    },
-    {
       "title": "do do do",
       "details": "yes yes yes",
       "complete": false,
       "id": 5
-    },
-    {
-      "title": "rerer",
-      "details": "rererere",
-      "complete": false,
-      "id": 6
     }
   ]
 }

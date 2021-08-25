@@ -1,4 +1,7 @@
 <template>
+    <div>
+       <Navbar/>
+    </div>
   <div class="welcome container">
       <p>Welcome</p>
       <div v-if="showLogin">
@@ -21,10 +24,10 @@ import SignupForm from '../components/SignupForm.vue'
 import LoginForm from '../components/LoginForm.vue'
 import { ref } from 'vue'
 import { useRouter} from 'vue-router'
-
+import Navbar from '../components/Navbar.vue'
 
 export default {
-    components: { SignupForm, LoginForm },
+    components: { Navbar, SignupForm, LoginForm },
     setup() {
         const showLogin = ref(true)
         const router = useRouter()
