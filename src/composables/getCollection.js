@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import { projectFirestore } from '../firebase/config'
 
 const getCollection = (collection) => {
@@ -19,7 +19,10 @@ const getCollection = (collection) => {
       console.log(err.message)
       documents.value = null
       error.value = 'could not fetch data'
+    })
 
+    watchEffect((onInvalidate) => {
+      onInvalidate(() => unsub())
     })
 
     return { documents, error}
