@@ -19,7 +19,7 @@ const requireAuth = (to, from, next) => {
 const requireNoAuth = (to, from, next) => {
   let user = projectAuth.currentUser
   if (user) {
-    next( {name:  'Chatroom'})
+    next( {name:  'Home'})
   } else {
     next()
   }

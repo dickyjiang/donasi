@@ -1,4 +1,5 @@
 <template>
+<Navbar />
   <div class="Home">
     <div v-if="projects.length">
         <div v-for="project in projects" :key="project.id">
@@ -10,10 +11,14 @@
 
 <script>
 import SingleProject from '../components/SingleProject.vue'
+import Navbar from '../components/Navbar.vue'
+import { watch } from 'vue'
+import getUser from '../composables/getUser'
+import { useRouter } from 'vue-router'
 
 export default {
     name: 'Home',
-    components: { SingleProject},
+    components: { Navbar,SingleProject},
     data() {
         return {
             projects:[]

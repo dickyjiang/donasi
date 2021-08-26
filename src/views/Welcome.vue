@@ -33,7 +33,7 @@ export default {
         const router = useRouter()
 
         const enterChat = () => {
-            router.push({ name: 'Chatroom' })
+            router.push({ name: 'Home' })
 
         }
 
