@@ -19,6 +19,16 @@ import { useRouter } from 'vue-router'
 export default {
     name: 'Home',
     components: { Navbar,SingleProject},
+    setup() {
+    const { user } = getUser()
+    const router =useRouter()
+
+    watch(user, ()=> {
+      if(!user.value){
+        router.push ({ name: 'Welcome'})
+      }
+    })
+  },
     data() {
         return {
             projects:[]

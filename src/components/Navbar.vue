@@ -4,6 +4,9 @@
           <p>Hey there {{ user.displayName }}</p>
           <p class="email">Currently logged in as {{ user.email }}</p>
       </div>
+      <div>
+        <router-link :to="{ name: 'addProject'}">Add new Project</router-link>
+      </div>
     
       <button @click="handleClick">logout</button>
   </nav>
