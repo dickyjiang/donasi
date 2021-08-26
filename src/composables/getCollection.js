@@ -8,25 +8,25 @@ const getCollection = (collection) => {
   let collectionRef = projectFirestore.collection(collection)
     .orderBy('createdAt')
 
-  const unsub =  collectionRef.onSnapshot((snap) => {
-      let results = []
-      snap.docs.forEach(doc => {
-        doc.data().createdAt && results.push({ ...doc.data(), id: doc.id })
-      })
-      documents.value = results
-      error.value = null
-    }, (err) => {
-      console.log(err.message)
-      documents.value = null
-      error.value = 'could not fetch data'
+  const unsub = collectionRef.onSnapshot((snap) => {
+    let results = []
+    snap.docs.forEach(doc => {
+      doc.data().createdAt && results.push({ ...doc.data(), id: doc.id })
     })
+    documents.value = results
+    error.value = null
+  }, (err) => {
+    console.log(err.message)
+    documents.value = null
+    error.value = 'could not fetch data'
+  })
 
-    watchEffect((onInvalidate) => {
-      //unsub from prev collection when watcher is stopped ( component unmount)
-      onInvalidate(() => unsub())
-    })
+  watchEffect((onInvalidate) => {
+    //unsub from prev collection when watcher is stopped ( component unmount)
+    onInvalidate(() => unsub())
+  })
 
-    return { documents, error}
+  return { documents, error }
 
 
 }
