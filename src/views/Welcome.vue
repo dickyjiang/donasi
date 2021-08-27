@@ -2,17 +2,17 @@
     <div>
        <Navbar/>
     </div>
-  <div class="welcome mx-auto w-2/4 mt-4 ">
-      <p class="text-center text-2xl font-dmserif font-serif font-bold text-gray-800">Welcome</p>
-      <div v-if="showLogin">
-        <h2>Login</h2>
+  <div class="welcome mx-auto w-2/4 mt-10 text-center">
+      <p class="text-center text-6xl font-serif font-bold text-gray-800">Welcome</p>
+      <div class="p-10 border-4 border-gray-800 mt-12 shadow-2xl" v-if="showLogin">
+        <h2 class="font-semibold text-2xl text-yellow-700 ">Login</h2>
         <LoginForm @login="enterChat" />
-        <p>No account yet? <span @click="showLogin = false"> Signup </span>instead</p>
+        <p class="text-md font-dmmono text-gray-800 mt-8">No account yet? <span class="cursor-pointer italic font-bold text-yellow-700" @click="showLogin = false"> Signup </span>instead</p>
       </div>
-      <div v-else>
-          <h2>Sign up</h2>
+      <div class="p-10 border-4 border-gray-800 mt-12 shadow-2xl"  v-else>
+          <h2 class="font-semibold text-2xl text-yellow-700 ">Sign up</h2>
            <SignupForm @signup="enterChat" />
-            <p>Already have an account? <span @click="showLogin = true"> Login </span>instead</p>
+            <p class="text-md font-dmmono text-gray-800 mt-8">Already have an account? <span class="cursor-pointer italic font-bold text-yellow-700" @click="showLogin = true"> Login </span>instead</p>
       </div>
      
   </div>

@@ -1,10 +1,10 @@
 <template>
   <form @submit.prevent="handleSubmit">
-      <input type="text" required placeholder="display name" v-model="displayName">
-      <input type="email" required placeholder="email" v-model="email">
-      <input type="password" required placeholder="password" v-model="password">
+      <input class="border-1 mt-3 focus: outline-none focus:ring-2 focus:ring-yellow-700 py-2 px-3" type="text" required placeholder="display name" v-model="displayName">
+      <input class="border-1 mt-3 focus: outline-none focus:ring-2 focus:ring-yellow-700 py-2 px-3" type="email" required placeholder="email" v-model="email">
+      <input class="border-1 mt-3 focus: outline-none focus:ring-2 focus:ring-yellow-700 py-2 px-3" type="password" required placeholder="password" v-model="password">
       <div class="error">{{ error }}</div>
-      <button>Sign up</button>
+      <button class="mt-12 w-3/4 py-2 px-3 focus:outline-none focus:bg-yellow-800 rounded-none bg-yellow-600 text-lg font-semibold">Sign up</button>
   </form>
 </template>
 
