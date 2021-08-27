@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style>
-nav {
+/* nav {
     padding: 20px;
     border-bottom: 1px solid #eee;
     display: flex;
@@ -53,6 +53,6 @@ nav {
   nav p.email {
     font-size: 14px;
     color: #999;
-  }
+  } */
 
 </style>

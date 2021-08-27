@@ -2,8 +2,8 @@
     <div>
        <Navbar/>
     </div>
-  <div class="welcome container">
-      <p>Welcome</p>
+  <div class="welcome mx-auto w-2/4 mt-4 ">
+      <p class="text-center text-2xl font-dmserif font-serif font-bold text-gray-800">Welcome</p>
       <div v-if="showLogin">
         <h2>Login</h2>
         <LoginForm @login="enterChat" />
@@ -46,7 +46,7 @@ export default {
 
 
 <style>
-.welcome {
+/* .welcome {
     text-align: center;
     padding: 20px 0;
     }
@@ -75,6 +75,6 @@ export default {
 }
 .welcome button {
     margin: 2opx auto;
-}
+} */
 
 </style>
