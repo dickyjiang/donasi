@@ -1,6 +1,7 @@
 <template>
   <Navbar />
   <div class="Home">
+    <h2>ddddd</h2>
     <div v-if="projects.length">
       <div v-for="project in projects" :key="project.id">
         <SingleProject
