@@ -1,19 +1,19 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <div class=" border-4 border-gray-300 pt-4 pb-8 px-4">
-      <div class="flex flex-col md:flex-row justify-between my-3 w-full">
+    <div class=" border-4 border-gray-300 pt-4 pb-8 px-4 bg-gray-400">
+      <div class="flex flex-col md:flex-row justify-around my-3 w-full">
         <div
-          class="mt-2 w-auto bg-yellow-500 border-4  shadow-sm border-gray-600 text-2xl font-bold focus:ring-2 focus:ring-yellow-700 py-2 px-3"
+          class="mt-4 md:mt-0 w-auto bg-yellow-500 border-4  shadow-sm border-gray-600 text-2xl font-bold focus:ring-2 focus:ring-yellow-700 py-2 px-3"
         >
           10.000
         </div>
         <div
-          class="mt-2 w-auto bg-yellow-500 border-4  shadow-sm border-gray-600 text-2xl font-bold focus:ring-2 focus:ring-yellow-700 py-2 px-3"
+          class="mt-4 md:mt-0 w-auto bg-yellow-500 border-4  shadow-sm border-gray-600 text-2xl font-bold focus:ring-2 focus:ring-yellow-700 py-2 px-3"
         >
           50.000
         </div>
         <div
-          class="mt-2 w-auto bg-yellow-500 border-4  shadow-sm border-gray-600 text-2xl font-bold focus:ring-2 focus:ring-yellow-700 py-2 px-3"
+          class="mt-4 md:mt-0 w-auto bg-yellow-500 border-4  shadow-sm border-gray-600 text-2xl font-bold focus:ring-2 focus:ring-yellow-700 py-2 px-3"
         >
           100.000
         </div>
