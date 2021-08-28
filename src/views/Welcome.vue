@@ -1,49 +1,66 @@
 <template>
-    <div>
-       <Navbar/>
-    </div>
+  <div>
+    <Navbar />
+  </div>
   <div class="welcome mx-auto lg:w-2/4  mt-10 text-center">
-      <p class="text-center text-4xl lg:text-6xl font-serif font-bold text-gray-800">Selamat Datang</p>
-      <div class="p-10 border-4 bg-white border-gray-800 mt-12 shadow-2xl" v-if="showLogin">
-        <h2 class="font-semibold text-2xl text-yellow-700 ">Login</h2>
-        <LoginForm @login="enterChat" />
-        <p class="text-md font-dmmono text-gray-800 mt-8">No account yet? <span class="cursor-pointer italic font-bold text-yellow-700" @click="showLogin = false"> Signup </span>instead</p>
-      </div>
-      <div class="p-10 border-4 bg-white border-gray-800 mt-12 shadow-2xl"  v-else>
-          <h2 class="font-semibold text-2xl text-yellow-700 ">Sign up</h2>
-           <SignupForm @signup="enterChat" />
-            <p class="text-md font-dmmono text-gray-800 mt-8">Already have an account? <span class="cursor-pointer italic font-bold text-yellow-700" @click="showLogin = true"> Login </span>instead</p>
-      </div>
-     
+    <p
+      class="text-center text-4xl lg:text-6xl font-serif font-bold text-gray-800"
+    >
+      Selamat Datang
+    </p>
+    <div
+      class="p-10 border-4 bg-white border-gray-800 mt-12 shadow-2xl"
+      v-if="showLogin"
+    >
+      <h2 class="font-semibold text-2xl text-yellow-700 ">Login</h2>
+      <LoginForm @login="enterChat" />
+      <p class="text-md font-dmmono text-gray-800 mt-8">
+        No account yet?
+        <span
+          class="cursor-pointer italic font-bold text-yellow-700"
+          @click="showLogin = false"
+        >
+          Signup </span
+        >instead
+      </p>
+    </div>
+    <div class="p-10 border-4 bg-white border-gray-800 mt-12 shadow-2xl" v-else>
+      <h2 class="font-semibold text-2xl text-yellow-700 ">Sign up</h2>
+      <SignupForm @signup="enterChat" />
+      <p class="text-md font-dmmono text-gray-800 mt-8">
+        Already have an account?
+        <span
+          class="cursor-pointer italic font-bold text-yellow-700"
+          @click="showLogin = true"
+        >
+          Login </span
+        >instead
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-
-import SignupForm from '../components/SignupForm.vue'
-import LoginForm from '../components/LoginForm.vue'
-import { ref } from 'vue'
-import { useRouter} from 'vue-router'
-import Navbar from '../components/Navbar.vue'
+import SignupForm from "../components/SignupForm.vue";
+import LoginForm from "../components/LoginForm.vue";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import Navbar from "../components/Navbar.vue";
 
 export default {
-    components: { Navbar, SignupForm, LoginForm },
-    setup() {
-        const showLogin = ref(true)
-        const router = useRouter()
+  components: { Navbar, SignupForm, LoginForm },
+  setup() {
+    const showLogin = ref(true);
+    const router = useRouter();
 
-        const enterChat = () => {
-            router.push({ name: 'Home' })
+    const enterChat = () => {
+      router.push({ name: "Home" });
+    };
 
-        }
-
-        return { showLogin, enterChat }
-    }
-
-
-}
+    return { showLogin, enterChat };
+  },
+};
 </script>
-
 
 <style>
 /* .welcome {
@@ -76,5 +93,4 @@ export default {
 .welcome button {
     margin: 2opx auto;
 } */
-
 </style>
