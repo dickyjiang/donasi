@@ -8,6 +8,9 @@
         <div class="font-semibold mx-3 max-w-lg py-2 px-6 focus:outline-none focus:bg-yellow-800 rounded border-2 border-gray-700 text-lg shadow-lg transform hover:-translate-y-1 ease-in-out duration-700">
           <router-link :to="{ name: 'addProject'}">Add new Project</router-link>
         </div>
+        <!-- <div class="font-semibold mx-3 max-w-lg py-2 px-6 focus:outline-none focus:bg-yellow-800 rounded border-2 border-gray-700 text-lg shadow-lg transform hover:-translate-y-1 ease-in-out duration-700">
+          <router-link :to="{ name: 'addDonation'}">Add Donation</router-link>
+        </div> -->
       
         <button @click="handleClick" class="mx-3 max-w-lg py-2 px-6 focus:outline-none focus:bg-yellow-800 rounded bg-yellow-600 text-lg font-semibold shadow-lg transform hover:-translate-y-1 ease-in-out duration-700">Logout</button>
 

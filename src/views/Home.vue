@@ -1,5 +1,6 @@
 <template>
   <Navbar />
+
   <div class="Home">
     <div v-if="projects.length">
       <div v-for="project in projects" :key="project.id">
@@ -21,9 +22,10 @@ import getUser from '../composables/getUser'
 import { useRouter } from 'vue-router'
 import getCollection from '../composables/getCollection'
 
+
 export default {
   name: 'Home',
-  components: { Navbar, SingleProject },
+  components: { Navbar, SingleProject,},
   setup() {
     const { user } = getUser()
     const router = useRouter()
