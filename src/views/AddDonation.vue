@@ -1,5 +1,5 @@
 <template>
-  <div class="welcome mx-auto lg:w-2/4 md:w-3/4 mt-10 text-center">
+  <div class="welcome mx-auto lg:w-2/4 md:w-3/4 mt-4 text-center">
     <p
       class="text-center text-4xl lg:text-4xl font-serif font-bold text-gray-800"
     >
