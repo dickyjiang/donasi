@@ -33,7 +33,7 @@
           transform
           hover:-translate-y-1
           ease-in-out
-          duration-700
+          duration-300
         "
       >
         <router-link :to="{ name: 'addProject' }">Add new Project</router-link>
@@ -54,7 +54,7 @@
           transform
           hover:-translate-y-1
           ease-in-out
-          duration-700
+          duration-300
         "
       >
         <router-link :to="{ name: 'adddDonation' }">Donasi</router-link>
@@ -77,7 +77,7 @@
           transform
           hover:-translate-y-1
           ease-in-out
-          duration-700
+          duration-300
         "
       >
         Logout
@@ -87,24 +87,24 @@
 </template>
 
 <script>
-import useLogout from '../composables/useLogout'
-import getUser from '../composables/getUser'
+import useLogout from "../composables/useLogout";
+import getUser from "../composables/getUser";
 
 export default {
   setup() {
-    const { logout, error } = useLogout()
-    const { user } = getUser()
+    const { logout, error } = useLogout();
+    const { user } = getUser();
 
     const handleClick = async () => {
-      await logout()
+      await logout();
       if (!error.value) {
-        console.log('user logged out')
+        console.log("user logged out");
       }
-    }
+    };
 
-    return { handleClick, user }
+    return { handleClick, user };
   },
-}
+};
 </script>
 
 <style>
