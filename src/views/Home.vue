@@ -2,7 +2,7 @@
   <Navbar />
 
   <div class="Home">
-    <div v-if="projects.length">
+    <div v-if="projects && projects.length">
       <div v-for="project in projects" :key="project.id">
         <SingleProject
           :project="project"
@@ -22,10 +22,9 @@ import getUser from '../composables/getUser'
 import { useRouter } from 'vue-router'
 import getCollection from '../composables/getCollection'
 
-
 export default {
   name: 'Home',
-  components: { Navbar, SingleProject,},
+  components: { Navbar, SingleProject },
   setup() {
     const { user } = getUser()
     const router = useRouter()
@@ -41,7 +40,7 @@ export default {
       projects: [],
     }
   },
-  mounted() {
+  async mounted() {
     const { error, documents } = getCollection('messages1')
     this.projects = documents
   },
