@@ -2,7 +2,18 @@
   <Navbar />
 
   <div class="Home">
-    <div v-if="projects && projects.length">
+    <div
+      class="
+        grid
+        sm:grid-cols-2
+        lg:grid-cols-3
+        gap-2
+        auto-rows-auto
+        max-w-screen-lg
+        mx-auto
+      "
+      v-if="projects && projects.length"
+    >
       <div v-for="project in projects" :key="project.id">
         <SingleProject
           :project="project"

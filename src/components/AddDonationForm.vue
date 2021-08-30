@@ -1,5 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
+
     <div class="border-4 border-gray-300 pt-4 pb-4 px-4 bg-gray-400">
       <div class="flex flex-col sm:flex-row sm:flex justify-around my-3">
         <div
@@ -13,6 +14,8 @@
             shadow-sm
             border-gray-600
             text-xl
+            
+
             font-bold
             focus:ring-2 focus:ring-yellow-700
             py-2
@@ -23,6 +26,7 @@
         </div>
         <div
           class="
+
             py-2
             px-3
             mt-2
@@ -36,6 +40,7 @@
             text-xl
             font-bold
             focus:ring-2 focus:ring-yellow-700
+
           "
         >
           50.000
@@ -81,6 +86,7 @@
       <input
         class="
           border-2 border-gray-200
+
           text-md
           font-bold
           mt-4
@@ -99,6 +105,7 @@
       <input
         class="
           border-2 border-gray-200
+
           text-md
           font-bold
           mt-4
