@@ -15,49 +15,49 @@
 </template>
 
 <script>
-import SingleProject from '../components/SingleProject.vue'
-import Navbar from '../components/Navbar.vue'
-import { watch } from 'vue'
-import getUser from '../composables/getUser'
-import { useRouter } from 'vue-router'
-import getCollection from '../composables/getCollection'
+import SingleProject from "../components/SingleProject.vue";
+import Navbar from "../components/Navbar.vue";
+import { watch } from "vue";
+import getUser from "../composables/getUser";
+import { useRouter } from "vue-router";
+import getCollection from "../composables/getCollection";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: { Navbar, SingleProject },
   setup() {
-    const { user } = getUser()
-    const router = useRouter()
+    const { user } = getUser();
+    const router = useRouter();
 
     watch(user, () => {
       if (!user.value) {
-        router.push({ name: 'Welcome' })
+        router.push({ name: "Welcome" });
       }
-    })
+    });
   },
   data() {
     return {
       projects: [],
-    }
+    };
   },
   async mounted() {
-    const { error, documents } = getCollection('messages1')
-    this.projects = documents
+    const { error, documents } = getCollection("messages1");
+    this.projects = documents;
   },
   methods: {
     handleDelete(id) {
       this.projects = this.projects.filter((project) => {
-        return project.id !== id
-      })
+        return project.id !== id;
+      });
     },
     handleComplete(id) {
       let p = this.projects.find((project) => {
-        return project.id == id
-      })
-      p.complete = !p.complete
+        return project.id == id;
+      });
+      p.complete = !p.complete;
     },
   },
-}
+};
 </script>
 
 <style>
