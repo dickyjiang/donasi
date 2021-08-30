@@ -1,5 +1,8 @@
 <template>
+<div class="min-h-screen p-4 bg-yellow-300">
   <router-view/>
+
+</div>
 </template>
 
 <style>

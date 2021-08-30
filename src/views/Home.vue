@@ -1,8 +1,23 @@
 <template>
   <Navbar />
+
   <div class="Home">
-    <h2>ddddd</h2>
+
+    <div
+      class="
+      mt-8
+        grid
+        sm:grid-cols-2
+        md:grid-cols-3
+        gap-4
+        max-w-screen-lg
+        mx-auto
+      "
+      v-if="projects && projects.length"
+    >
+
     <div v-if="projects.length">
+
       <div v-for="project in projects" :key="project.id">
         <SingleProject
           :project="project"
@@ -15,50 +30,51 @@
 </template>
 
 <script>
-import SingleProject from '../components/SingleProject.vue'
-import Navbar from '../components/Navbar.vue'
-import { watch } from 'vue'
-import getUser from '../composables/getUser'
-import { useRouter } from 'vue-router'
-import getCollection from '../composables/getCollection'
+import SingleProject from "../components/SingleProject.vue";
+import Navbar from "../components/Navbar.vue";
+import { watch } from "vue";
+import getUser from "../composables/getUser";
+import { useRouter } from "vue-router";
+import getCollection from "../composables/getCollection";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: { Navbar, SingleProject },
   setup() {
-    const { user } = getUser()
-    const router = useRouter()
+    const { user } = getUser();
+    const router = useRouter();
 
     watch(user, () => {
       if (!user.value) {
-        router.push({ name: 'Welcome' })
+        router.push({ name: "Welcome" });
       }
-    })
+    });
   },
   data() {
     return {
       projects: [],
-    }
+    };
   },
-  mounted() {
-    const { user } = getUser()
-    const { error, documents } = getCollection('messages1', user.value.uid)
-    this.projects = documents
+
+  async mounted() {
+    const { error, documents } = getCollection("messages1");
+    this.projects = documents;
+
   },
   methods: {
     handleDelete(id) {
       this.projects = this.projects.filter((project) => {
-        return project.id !== id
-      })
+        return project.id !== id;
+      });
     },
     handleComplete(id) {
       let p = this.projects.find((project) => {
-        return project.id == id
-      })
-      p.complete = !p.complete
+        return project.id == id;
+      });
+      p.complete = !p.complete;
     },
   },
-}
+};
 </script>
 
 <style>

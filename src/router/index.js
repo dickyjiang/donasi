@@ -3,6 +3,7 @@ import Welcome from '../views/Welcome.vue'
 // import Chatroom from '../views/Chatroom.vue'
 import Home from '../views/Home.vue'
 import AddProject from '../views/AddProject.vue'
+import AddDonation from '../views/AddDonation.vue'
 import {projectAuth} from '../firebase/config'
 
 // auth guard
@@ -50,6 +51,11 @@ const routes = [
     path: '/add',
     name: 'addProject',
     component: AddProject,
+  },
+  {
+    path: '/donation',
+    name: 'adddDonation',
+    component: AddDonation,
   },
 
 
