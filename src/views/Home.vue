@@ -4,11 +4,11 @@
   <div class="Home">
     <div
       class="
+      mt-8
         grid
         sm:grid-cols-2
-        lg:grid-cols-3
-        gap-2
-        auto-rows-auto
+        md:grid-cols-3
+        gap-4
         max-w-screen-lg
         mx-auto
       "

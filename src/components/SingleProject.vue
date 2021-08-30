@@ -1,12 +1,12 @@
 <template>
-  <div class="project">
+  <div class="project p-2 bg-white rounded shadow-md border-2 border-gray-500">
     <div class="actions">
-      <h3 @click="showDetails = !showDetails">{{ project.title }}</h3>
-      <div class="icons">
+      <h3 class="font-bold" @click="showDetails = !showDetails">{{ project.title }}</h3>
+      <!-- <div class="icons">
         <span class="material-icons">edit</span>
         <span @click="deleteProject" class="material-icons">delete</span>
         <span @click="toggleComplete" class="material-icons">done</span>
-      </div>
+      </div> -->
     </div>
     <div v-if="showDetails" class="details">
       <p>{{ project.details }}</p>
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style scoped>
-.project {
+/* .project {
   margin: 20px auto;
   background: white;
   padding: 10px 20px;
@@ -72,5 +72,5 @@ h3 {
 }
 .material-icons:hover {
   color: #777;
-}
+} */
 </style>

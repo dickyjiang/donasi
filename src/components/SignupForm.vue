@@ -4,6 +4,8 @@
       class="
         border-1
         mt-3
+        text-lg
+        font-semibold
         focus:
         outline-none
         focus:ring-2 focus:ring-yellow-700
@@ -19,6 +21,8 @@
       class="
         border-1
         mt-3
+        text-lg
+        font-semibold
         focus:
         outline-none
         focus:ring-2 focus:ring-yellow-700
@@ -34,6 +38,8 @@
       class="
         border-1
         mt-3
+        text-lg
+        font-semibold
         focus:
         outline-none
         focus:ring-2 focus:ring-yellow-700
@@ -49,13 +55,13 @@
     <button
       class="
         mt-12
-        w-full
+        w-3/4
+        rounded
         max-w-lg
         py-2
         px-3
         focus:outline-none
         focus:bg-yellow-800
-        rounded-none
         bg-yellow-600
         text-lg
         font-semibold
@@ -63,7 +69,7 @@
         transform
         hover:-translate-y-1
         ease-in-out
-        duration-700
+        duration-300
       "
     >
       Sign up
