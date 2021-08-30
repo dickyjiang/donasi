@@ -78,6 +78,7 @@
 </template>
 
 <script>
+
 import { ref } from "vue";
 import useSignup from "../composables/useSignup";
 
@@ -102,3 +103,5 @@ export default {
 </script>
 
 <style></style>
+
+

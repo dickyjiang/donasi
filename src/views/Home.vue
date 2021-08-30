@@ -2,6 +2,7 @@
   <Navbar />
 
   <div class="Home">
+
     <div
       class="
       mt-8
@@ -14,6 +15,9 @@
       "
       v-if="projects && projects.length"
     >
+
+    <div v-if="projects.length">
+
       <div v-for="project in projects" :key="project.id">
         <SingleProject
           :project="project"
@@ -51,9 +55,11 @@ export default {
       projects: [],
     };
   },
+
   async mounted() {
     const { error, documents } = getCollection("messages1");
     this.projects = documents;
+
   },
   methods: {
     handleDelete(id) {
