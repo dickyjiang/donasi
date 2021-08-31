@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-xl shadow-xl mx-auto bg-yellow-600 p-10">
+  <div class="rounded-xl shadow-xl mx-auto bg-yellow-600 p-10 my-5">
     <div class="actions  justify-between items-baseline" >
       <h1 class="text-7xl font-bold text-center" >{{ project.amount }}</h1>
     </div>
