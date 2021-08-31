@@ -4,13 +4,13 @@ import Welcome from '../views/Welcome.vue'
 import Home from '../views/Home.vue'
 import AddProject from '../views/AddProject.vue'
 import AddDonation from '../views/AddDonation.vue'
-import {projectAuth} from '../firebase/config'
+import { projectAuth } from '../firebase/config'
 
 // auth guard
 const requireAuth = (to, from, next) => {
   let user = projectAuth.currentUser
   if (!user) {
-    next( {name:  'Welcome'})
+    next({ name: 'Welcome' })
   } else {
     next()
   }
@@ -20,7 +20,7 @@ const requireAuth = (to, from, next) => {
 const requireNoAuth = (to, from, next) => {
   let user = projectAuth.currentUser
   if (user) {
-    next( {name:  'Home'})
+    next({ name: 'Home' })
   } else {
     next()
   }
@@ -31,7 +31,7 @@ const routes = [
   {
     path: '/',
     name: 'Welcome',
-    component : Welcome,
+    component: Welcome,
     beforeEnter: requireNoAuth
   },
   // {
@@ -44,7 +44,7 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
-  
+
   },
 
   {
@@ -53,13 +53,13 @@ const routes = [
     component: AddProject,
   },
   {
-    path: '/donation',
+    path: '/donation/:id',
     name: 'adddDonation',
     component: AddDonation,
   },
 
 
-  
+
 ]
 
 const router = createRouter({

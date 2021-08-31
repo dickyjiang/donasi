@@ -12,73 +12,17 @@
       </div>
       <div class="w-full flex items-center justify-between mt-3">
         <div class="flex flex-1 max-w-md">
-          <div
-            class="
-              font-semibold
-              w-1/2
-              py-2
-              px-3
-              mx-2
-              text-center
-              focus:outline-none
-              focus:bg-yellow-800
-              bg-yellow-500
-              rounded
-              border-2 border-gray-700
-              text-lg
-              shadow-lg
-              transform
-              hover:-translate-y-1
-              ease-in-out
-              duration-300
-            "
-          >
-            <router-link :to="{ name: 'adddDonation' }">Donasi</router-link>
+          <div class=" font-semibold w-1/2 py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-800 bg-yellow-500 rounded border-2 border-gray-700 text-lg shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
+            <router-link :to="{ name: 'adddDonation' , params:{ id : user.email }}">Donasi</router-link>
           </div>
-          <div
-            class="
-              py-2
-              px-3
-              mx-2
-              text-center
-              focus:outline-none
-              focus:bg-yellow-800
-              rounded
-              border-2 border-gray-700
-              text-md
-              font-bold
-              shadow-lg
-              transform
-              hover:-translate-y-1
-              ease-in-out
-              duration-300
-            "
-          >
+          <div class=" py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-800 rounded border-2 border-gray-700 text-md font-bold shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
             <router-link :to="{ name: 'addProject' }">Add new</router-link>
           </div>
         </div>
 
         <button
           @click="handleClick"
-          class="
-            py-2
-            px-3
-            mx-2
-            text-center
-            focus:outline-none
-            focus:bg-yellow-800
-            hover:bg-red-600
-            hover:text-white
-            rounded
-            border-2 border-gray-500
-            text-lg
-            font-semibold
-            shadow
-            transform
-            hover:-translate-y-1
-            ease-in-out
-            duration-300
-          "
+          class=" py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-800 hover:bg-red-600 hover:text-white rounded border-2 border-gray-500 text-lg font-semibold shadow transform hover:-translate-y-1 ease-in-out duration-300 "
         >
           Logout
         </button>
