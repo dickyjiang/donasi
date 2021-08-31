@@ -1,12 +1,20 @@
 <template>
   <Navbar />
 
-  <div class=" Home mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-screen-lg mx-auto ">
+  <div
+    class="
+      Home
+      mt-8
+      grid
+      sm:grid-cols-2
+      md:grid-cols-3
+      gap-4
+      max-w-screen-lg
+      mx-auto
+    "
+  >
     <div v-if="projects && projects.length">
-      <div
-        v-for="project in projects"
-        :key="project.id"
-      >
+      <div v-for="project in projects" :key="project.id">
         <SingleProject
           :project="project"
           @delete="handleDelete"
@@ -45,8 +53,7 @@ export default {
   },
 
   async mounted() {
-    const { user } = getUser();
-    const { error, documents } = getCollection("messages1", user._value.uid);
+    const { error, documents } = getCollection("donasi");
     this.projects = documents;
   },
   methods: {
