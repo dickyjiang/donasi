@@ -1,13 +1,14 @@
 <template>
-  <div class="project my-2 p-2 bg-white rounded shadow-md border-2 border-gray-500">
-    <div class="actions flex justify-between" >
-      <h3 class="font-bold" >{{ project.amount }}</h3>
-      <h3 class="font-bold" @click="showDetails = !showDetails">{{ project.displayName }}</h3>
+  <div class="rounded-xl shadow-xl mx-auto bg-yellow-600 p-10">
+    <div class="actions  justify-between items-baseline" >
+      <h1 class="text-7xl font-bold text-center" >{{ project.amount }}</h1>
     </div>
-      <h3 class="font-bold" @click="showDetails = !showDetails">{{ project.pesan }}</h3>
-    <!-- <div v-if="showDetails" class="details">
-      <p>{{ project.nameDisplay }}</p>
-    </div> -->
+      <h3 class=" mt-8 text-center font-bold text-5xl font-serif" @click="showDetails = !showDetails">{{ project.pesan }}</h3>
+      <div class="mt-8">
+        <h3 class="text-lg text-right font-bold"> Pengirim : </h3>
+        <h1 class="font-bold text-right text-4xl" @click="showDetails = !showDetails">{{ project.displayName }}</h1>
+
+      </div>
   </div>
 </template>
 
