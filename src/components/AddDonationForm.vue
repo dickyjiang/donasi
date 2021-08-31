@@ -78,7 +78,7 @@
         type="number"
         required
         placeholder="0 IDR"
-        v-model="displayName"
+        v-model="amount"
       />
     </div>
 
@@ -101,7 +101,7 @@
         v-model="displayName"
       />
 
-      <input
+      <!-- <input
         class="
           border-2 border-gray-200
 
@@ -118,7 +118,7 @@
         required
         placeholder="Email"
         v-model="email"
-      />
+      /> -->
       <div class="mt-6">
         <p class="text-left pl-3 text-md font-bold mt-3 text-gray-400">Pesan</p>
         <textarea
@@ -133,10 +133,7 @@
             py-2
             px-3
           "
-          name=""
-          id=""
-          cols="30"
-          rows="10"
+          v-model="pesan"
         ></textarea>
       </div>
     </div>
@@ -196,25 +193,41 @@
 </template>
 
 <script>
-import { ref } from "vue";
-// import useSignup from "../composables/useSignup"
+import { ref } from 'vue'
+import getUser from '../composables/getUser'
+import useCollection from '../composables/useCollection'
+import { timestamp } from '../firebase/config'
 
 export default {
-  // setup(props, context) {
-  //     const { error, signup } = useSignup()
-  //     //refs
-  //    const displayName = ref('')
-  //    const email = ref('')
-  //    const password = ref('')
-  //    const handleSubmit = async () => {
-  //     await signup(email.value, password.value, displayName.value)
-  //     if (!error.value) {
-  //         context.emit('signup')
-  //    }
-  //    }
-  //    return { displayName, email, password, handleSubmit, error}
-  // }
-};
+  data() {
+    return {
+      displayName: '',
+      pesan: '',
+      amount: '',
+    }
+  },
+  methods: {
+    handleSubmit() {
+      const { user } = getUser()
+      const { addDoc, error } = useCollection('donasi')
+      const message = ref('')
+      const chat = {
+        displayName: this.displayName,
+        pesan: this.pesan,
+        amount: this.amount,
+        complete: false,
+        uid: user.value.uid,
+        createdAt: timestamp(),
+      }
+      addDoc(chat).then(() => {
+        this.$router.push('/display')
+      })
+      if (!error.value) {
+        message.value = ''
+      }
+    },
+  },
+}
 </script>
 
 <style>
