@@ -1,12 +1,12 @@
 <template>
-  <div class="project p-2 bg-white rounded shadow-md border-2 border-gray-500">
-    <div class="actions">
+  <div class="project my-2 p-2 bg-white rounded shadow-md border-2 border-gray-500">
+    <div class="actions flex justify-between" >
       <h3 class="font-bold" @click="showDetails = !showDetails">{{ project.title }}</h3>
-      <!-- <div class="icons">
+      <div class="icons">
         <span class="material-icons">edit</span>
         <span @click="deleteProject" class="material-icons">delete</span>
         <span @click="toggleComplete" class="material-icons">done</span>
-      </div> -->
+      </div>
     </div>
     <div v-if="showDetails" class="details">
       <p>{{ project.details }}</p>

@@ -86,7 +86,6 @@
       <input
         class="
           border-2 border-gray-200
-
           text-md
           font-bold
           mt-4
