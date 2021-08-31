@@ -3,14 +3,7 @@
     <Navbar />
   </div>
   <div class="welcome mx-auto lg:w-2/4 mt-10 text-center">
-    <p
-      class="
-        text-center text-3xl
-        lg:text-6xl
-        font-serif font-bold
-        text-gray-800
-      "
-    >
+    <p class=" text-center text-3xl lg:text-6xl font-serif font-bold text-gray-800 ">
       Selamat Datang
     </p>
     <div
@@ -25,11 +18,13 @@
           class="cursor-pointer italic font-bold text-yellow-700"
           @click="showLogin = false"
         >
-          Daftar </span
-        >disini
+          Daftar </span>disini
       </p>
     </div>
-    <div class="px-3 py-5 border-4 bg-white border-gray-600 mt-8 shadow-2xl" v-else>
+    <div
+      class="px-3 py-5 border-4 bg-white border-gray-600 mt-8 shadow-2xl"
+      v-else
+    >
       <h2 class="font-semibold text-2xl text-yellow-500">Sign up</h2>
       <SignupForm @signup="enterChat" />
       <p class="text-md font-dmmono text-gray-800 mt-8">
@@ -38,8 +33,7 @@
           class="cursor-pointer italic font-bold text-yellow-700"
           @click="showLogin = true"
         >
-          Login </span
-        >disini
+          Login </span>disini
       </p>
     </div>
   </div>
@@ -81,7 +75,7 @@ export default {
     display: block;
      margin: 20px auto;
     }
-.welcome input { 
+.welcome input {
     width: 100%;
     padding: 10px;
     border-radius: 20px;
