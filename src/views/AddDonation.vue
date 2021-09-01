@@ -106,7 +106,7 @@
           </div>
         </div>
 
-        <div class="error">{{ error }}</div>
+        <!-- <div class="error">{{ error }}</div> -->
         <button class=" mt-12 w-full max-w-lg py-2 px-3 focus:outline-none focus:bg-yellow-800 rounded-none bg-yellow-600 text-lg font-semibold shadow-lg transform hover:-translate-y-1 ease-in-out duration-700 ">
           Kirim
         </button>
@@ -151,7 +151,7 @@ export default {
       amount: "",
     };
   },
-  components: { Navbar, AddDonationForm },
+  components: { Navbar, },
 
   methods: {
     handleSubmit() {
@@ -168,12 +168,13 @@ export default {
         uid: "teuing",
         createdAt: timestamp(),
       };
+
       addDoc(chat).then(() => {
         this.$router.push("/display");
       });
-      if (!error.value) {
-        message.value = "";
-      }
+      // if (!error.value) {
+      //   message.value = "";
+      // }
     },
   },
   //   setup() {
