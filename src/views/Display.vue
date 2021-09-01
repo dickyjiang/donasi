@@ -1,6 +1,23 @@
 <template>
 
   <div class=" Home mt-8 max-w-screen-md mx-auto">
+    <transition-group tag="ul" name="list" 
+    appear
+    @before-enter="beforeEnter"
+    @enter="Enter"
+    @after-enter="afterEnter"
+    >
+      <li>
+        <div v-if="projects && projects.length">
+          <div v-for="project in projects" :key="project.id">
+          <SingleDonation  :project="project" @delete="handleDelete" @complete="handleComplete" />
+          </div>
+        </div>
+        <div v-else class="text-center text-xl font-bold">Belum ada Donasi</div>
+      </li>
+    </transition-group>
+  </div>
+  <!-- <div class=" Home mt-8 max-w-screen-md mx-auto">
     <div v-if="projects && projects.length">
       <div v-for="project in projects" :key="project.id"
       >
@@ -9,26 +26,37 @@
         @delete="handleDelete"
         @complete="handleComplete"
       />
-
-        <!-- <SingleProject
-          :project="project"
-          @delete="handleDelete"
-          @complete="handleComplete"
-        /> -->
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
 import SingleDonation from "../components/SingleDonation.vue";
 import Navbar from "../components/Navbar.vue";
-import { watch } from "vue";
+import { ref, watch } from "vue";
 import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
 import getCollection from "../composables/getCollection";
 
 export default {
+  setup() {
+  
+
+    const beforeEnter =()=>{
+      console.log("before enter")
+    }
+    const Enter =()=>{
+      console.log(" enter")
+
+    }
+    const afterEnter =()=>{
+        console.log("after enter")
+
+    }
+    return { beforeEnter, Enter, afterEnter, }
+  },
+
   name: "display",
   components: { Navbar, SingleDonation },
   setup() {
@@ -69,4 +97,20 @@ export default {
 </script>
 
 <style>
+/* list transition */
+.list-enter-from {
+  opacity: 0;
+  transform: scale(0.4);
+}
+.list-enter-active {
+  transition: all .8s ease;
+}
+.list-leave-to {
+  opacity: 0;
+}
+.list-leave-active {
+  transition: all .8s ease;
+}
+
+
 </style>

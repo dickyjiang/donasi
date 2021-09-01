@@ -1,13 +1,12 @@
 <template>
-  <div class="rounded-xl shadow-xl mx-auto bg-yellow-600 p-10 my-5">
+  <div class="rounded-xl shadow-xl mx-auto bg-yellow-600 py-2 px-3 my-5">
     <div class="actions  justify-between items-baseline" >
-      <h1 class="text-7xl font-bold text-center" >{{ project.amount }}</h1>
+      <h1 class="text-lg font-bold text-center" >{{ project.amount }}</h1>
     </div>
-      <h3 class=" mt-8 text-center font-bold text-5xl font-serif" @click="showDetails = !showDetails">{{ project.pesan }}</h3>
-      <div class="mt-8">
-        <h3 class="text-lg text-right font-bold"> Pengirim : </h3>
-        <h1 class="font-bold text-right text-4xl" @click="showDetails = !showDetails">{{ project.displayName }}</h1>
-
+      <h3 class=" mt-2 text-center font-bold text-lg font-serif" @click="showDetails = !showDetails">{{ project.pesan }}</h3>
+      <div class="mt-2">
+        <h3 class="text-md text-right font-bold"> Pengirim : </h3>
+        <h1 class="font-bold text-right text-lg" @click="showDetails = !showDetails">{{ project.displayName }}</h1>
       </div>
   </div>
 </template>
