@@ -2,23 +2,26 @@
   <div>
     <Navbar />
   </div>
-  <div class="welcome mx-auto lg:w-2/4 mt-10 text-center">
-    <p class=" text-center text-3xl lg:text-6xl font-serif font-bold text-gray-800 ">
+  <div
+    class=" welcome mx-auto max-w-5xl px-4 pb-10 pt-8 flex min-h-screen"
+  >
+    <p class="text-2xl lg:text-4xl font-serif font-bold text-gray-800 flex-1 ">
       Selamat Datang
     </p>
     <div
-      class="px-3 py-5 border-4 bg-white border-gray-600 mt-8 shadow-2xl"
+      class="px-3 py-5 border-4 bg-white border-gray-600  shadow-2xl"
       v-if="showLogin"
     >
       <h2 class="font-bold text-2xl text-yellow-500">Login</h2>
       <LoginForm @login="enterChat" />
-      <p class="text-md font-dmmono text-gray-800 mt-8">
+      <p class="text-md font-dmmono text-gray-800 mt-8 text-center">
         Belum punya akun?
         <span
           class="cursor-pointer italic font-bold text-yellow-700"
           @click="showLogin = false"
         >
-          Daftar </span>disini
+          Daftar </span
+        >disini
       </p>
     </div>
     <div
@@ -33,8 +36,15 @@
           class="cursor-pointer italic font-bold text-yellow-700"
           @click="showLogin = true"
         >
-          Login </span>disini
+          Login </span
+        >disini
       </p>
+    </div>
+  </div>
+  <div class="flex bg-green-600 h-screen">
+    <div class="bg-black w-1/2"></div>
+    <div class="p-4 w-1/2">
+      <h1 class="font-serif text-3xl font-bold">Selamat Datang</h1>
     </div>
   </div>
 </template>
