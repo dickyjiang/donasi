@@ -5,8 +5,6 @@
       <div v-for="project in projects" :key="project.id">
         <SingleDonation
           :project="project"
-          @delete="handleDelete"
-          @complete="handleComplete"
         />
 
         <!-- <SingleProject
@@ -23,7 +21,7 @@
 import SingleDonation from "../components/SingleDonation.vue";
 import Navbar from "../components/Navbar.vue";
 import { ref, watch } from "vue";
-// import getUser from "../composables/getUser";
+import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
 import getCollection from "../composables/getCollection";
 
@@ -41,11 +39,11 @@ export default {
     };
   },
 
-  // async mounted() {
-  //   const { user } = getUser();
-  //   const { error, documents } = getCollection("donasi", user._value.uid);
-  //   this.projects = documents;
-  // },
+  async mounted() {
+    const { user } = getUser();
+    const { error, documents } = getCollection("donasi", user._value.uid);
+    this.projects = documents;
+  },
 
   // methods: {
   //   handleDelete(id) {

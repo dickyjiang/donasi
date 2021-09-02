@@ -159,7 +159,7 @@ export default {
       // console.log(this.$emit(route.params.id));
       const { addDoc } = useCollection("donasi");
       const message = ref("");
-      const chat = {
+      const dataDonasi = {
         displayName: this.displayName,
         pesan: this.pesan,
         amount: this.amount,
@@ -169,7 +169,7 @@ export default {
         createdAt: timestamp(),
       };
 
-      addDoc(chat).then(() => {
+      addDoc(dataDonasi).then(() => {
         this.$router.push("/display");
       });
       // if (!error.value) {
