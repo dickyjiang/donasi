@@ -1,9 +1,9 @@
 import { ref } from 'vue'
-import { projectFirestore } from '../firebase/config'
 
-const getDonations = () => {
 
-  const donations = ref([])
+const getDonation = (id) => {
+
+  const donation = ref([])
   const error = ref(null)
 
   const load = async () => {
@@ -12,8 +12,8 @@ const getDonations = () => {
       if(!res.exists) {
         throw Error('no available data')
       }
-      donations.value = { ...res.data(), id: res.id}
-      console.log(donations.value);
+      donation.value = { ...res.data(), id: res.id}
+      console.log(donation.value);
       // donations.value = await data.json()
     }
     catch(err) {
@@ -21,7 +21,7 @@ const getDonations = () => {
     }
   }
 
-  return { donations, error, load }
+  return { donation, error, load }
 }
 
-export default getDonations
+export default getDonation

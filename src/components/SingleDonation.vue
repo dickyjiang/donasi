@@ -2,7 +2,7 @@
   <div class="rounded-xl shadow-xl mx-auto bg-yellow-600 p-10 my-5">
     <div class="actions  justify-between items-baseline" >
       <h1 class="text-7xl font-bold text-center" >
-        {{ project.amount }}</h1>
+        {{ donation.amount }}</h1>
     </div>
       <h3 class=" mt-8 text-center font-bold text-5xl font-serif" @click="showDetails = !showDetails">{{ project.pesan }}</h3>
       <div class="mt-8">

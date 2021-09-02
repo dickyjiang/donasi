@@ -4,7 +4,7 @@
       Masukan Donasi {{ $route.params.id }}
     </p>
     <div class="p-2 border-4 bg-white border-gray-800 mt-8 shadow-2xl">
-      <!-- <h2 class="font-semibold text-2xl text-yellow-700 ">Masukan Donasi anda</h2> -->
+      
       <form @submit.prevent="handleSubmit">
 
         <div class="border-4 border-gray-300 pt-4 pb-4 px-4 bg-gray-400">
@@ -38,24 +38,6 @@
             v-model="displayName"
           />
 
-          <!-- <input
-        class="
-          border-2 border-gray-200
-
-          text-md
-          font-bold
-          mt-4
-          focus:
-          outline-none
-          focus:ring-2 focus:ring-yellow-700
-          py-2
-          px-3
-        "
-        type="email"
-        required
-        placeholder="Email"
-        v-model="email"
-      /> -->
           <div class="mt-6">
             <p class="text-left pl-3 text-md font-bold mt-3 text-gray-400">Pesan</p>
             <textarea
@@ -112,24 +94,11 @@
         </button>
       </form>
     </div>
-    <!-- <div class="p-10 border-4 bg-white border-gray-800 mt-12 shadow-2xl" v-else>
-      <h2 class="font-semibold text-2xl text-yellow-700 ">Sign up</h2>
-      <SignupForm @signup="enterChat" />
-      <p class="text-md font-dmmono text-gray-800 mt-8">
-        Already have an account?
-        <span
-          class="cursor-pointer italic font-bold text-yellow-700"
-          @click="showLogin = true"
-        >
-          Login </span
-        >instead
-      </p>
-    </div> -->
   </div>
 </template>
 
 <script>
-import AddDonationForm from "../components/AddDonationForm.vue";
+
 import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import Navbar from "../components/Navbar.vue";
@@ -140,8 +109,10 @@ export default {
   props: ["id"],
   setup() {
     const route = useRoute();
-    // console.log("aaaa");
-    // console.log(route.params.id);
+    const amount = ref('')
+    const displayName = ref('')
+    const pesan = ref('')
+    
   },
 
   data() {

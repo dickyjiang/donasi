@@ -5,6 +5,7 @@ import Home from '../views/Home.vue'
 import AddProject from '../views/AddProject.vue'
 import AddDonation from '../views/AddDonation.vue'
 import Display from '../views/Display.vue'
+import ShowDonation from '../views/ShowDonation.vue'
 import { projectAuth } from '../firebase/config'
 
 // auth guard
@@ -62,6 +63,11 @@ const routes = [
     path: '/display',
     name: 'display',
     component: Display,
+  },
+  {
+    path: '/show',
+    name: 'showDonation',
+    component: ShowDonation,
   },
 
 
