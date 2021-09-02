@@ -26,7 +26,7 @@
 import SingleDonation from "../components/SingleDonation.vue";
 import Navbar from "../components/Navbar.vue";
 import { watch } from "vue";
-// import getUser from "../composables/getUser";
+import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
 import getCollection from "../composables/getCollection";
 
