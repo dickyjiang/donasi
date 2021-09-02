@@ -1,14 +1,12 @@
 <template>
-  <div class="rounded-xl shadow-xl mx-auto bg-yellow-600 p-10 my-5">
-    <div class="actions  justify-between items-baseline" >
-      <h1 class="text-7xl font-bold text-center" >{{ project.amount }}</h1>
-    </div>
-      <h3 class=" mt-8 text-center font-bold text-5xl font-serif" @click="showDetails = !showDetails">{{ project.pesan }}</h3>
-      <div class="mt-8">
-        <h3 class="text-lg text-right font-bold"> Pengirim : </h3>
-        <h1 class="font-bold text-right text-4xl" @click="showDetails = !showDetails">{{ project.displayName }}</h1>
-
+  <div class="rounded-xl shadow-xl mx-auto my-5 overflow-hidden relative p-3 h-40 bg-black max-w-lg">
+    <img class=" opacity-60 absolute inset-0 w-full h-full object-cover " src="../assets/always-state-wonder-awe_opt.jpg" alt="">
+      <div class="w-full h-full absolute text-white">
+      <h1 class=" text-4xl font-bold text-left" ><span class="text-2xl">IDR</span> {{ project.amount }}</h1>
+      <h3 class=" mt-2 font-bold text-2xl font-serif" @click="showDetails = !showDetails">"{{ project.pesan }}"</h3>
+      <h1 class="font-medium italic absolute bottom-6 right-6 text-right text-2xl" @click="showDetails = !showDetails">{{ project.displayName }}</h1>
       </div>
+
   </div>
 </template>
 
