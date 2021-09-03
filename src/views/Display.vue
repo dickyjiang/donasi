@@ -11,12 +11,6 @@
           @delete="handleDelete"
           @complete="handleComplete"
         />
-
-        <!-- <SingleProject
-          :project="project"
-          @delete="handleDelete"
-          @complete="handleComplete"
-        /> -->
       </div>
     </div>
   </div>
@@ -26,22 +20,22 @@
 import SingleDonation from "../components/SingleDonation.vue";
 import Navbar from "../components/Navbar.vue";
 import { watch } from "vue";
-// import getUser from "../composables/getUser";
+import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
 import getCollection from "../composables/getCollection";
 
 export default {
   name: "display",
   components: { Navbar, SingleDonation },
-  // setup() {
-  //   // const { user } = getUser();
-  //   // const router = useRouter();
-  //   // watch(user, () => {
-  //   //   if (!user.value) {
-  //   //     router.push({ name: "Welcome" });
-  //   //   }
-  //   // });
-  // },
+  setup() {
+    const { user } = getUser();
+    const router = useRouter();
+    watch(user, () => {
+      if (!user.value) {
+        router.push({ name: "Welcome" });
+      }
+    });
+  },
   data() {
     return {
       projects: [],
