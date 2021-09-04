@@ -1,9 +1,11 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <label>Title:</label>
-    <input type="text" v-model="title" required />
-    <label>Details:</label>
-    <textarea v-model="details" required></textarea>
+    <label>Nama:</label>
+    <input type="text" v-model="displayName" required />
+    <label>Jumlah:</label>
+    <input type="text" v-model="amount" required />
+    <label>Pesan:</label>
+    <textarea v-model="pesan"></textarea>
     <button>add Project</button>
   </form>
 </template>
@@ -17,29 +19,46 @@ import { timestamp } from '../firebase/config'
 export default {
   data() {
     return {
-      title: '',
-      details: '',
+      displayName: '',
+      amount: '',
+      pesan: '',
     }
   },
   methods: {
     handleSubmit() {
-      const { user } = getUser()
-      const { addDoc, error } = useCollection('messages1')
-      const message = ref('')
-      const chat = {
-        title: this.title,
-        details: this.details,
-        complete: false,
-        uid: user.value.uid,
-        createdAt: timestamp(),
-      }
-      addDoc(chat).then(() => {
-        this.$router.push('/Home')
-      })
-      if (!error.value) {
-        message.value = ''
-      }
-    },
+        let donation = {
+          displayName:  this.displayName,
+          amount: this.amount,
+          pesan: this.pesan,
+          
+        }
+
+        fetch('http://localhost:3000/donations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json'},
+          body: JSON.stringify(donation)
+        }).then(() => {
+          this.$router.push('/display')
+        }).catch((err) => console.log(err)) 
+    }
+    // handleSubmit() {
+    //   const { user } = getUser()
+    //   const { addDoc, error } = useCollection('messages1')
+    //   const message = ref('')
+    //   const chat = {
+    //     title: this.title,
+    //     details: this.details,
+    //     complete: false,
+    //     uid: user.value.uid,
+    //     createdAt: timestamp(),
+    //   }
+    //   addDoc(chat).then(() => {
+    //     this.$router.push('/Home')
+    //   })
+    //   if (!error.value) {
+    //     message.value = ''
+    //   }
+    // },
   },
 }
 </script>
