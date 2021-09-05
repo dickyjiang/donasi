@@ -38,7 +38,7 @@ export default {
           headers: { 'Content-Type': 'application/json'},
           body: JSON.stringify(donation)
         }).then(() => {
-          this.$router.push('/display')
+          this.$router.push('/home')
         }).catch((err) => console.log(err)) 
     }
     // handleSubmit() {

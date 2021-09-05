@@ -2,7 +2,9 @@
   <div>
     <div v-if ="donations.length">
       <div v-for="donation in donations" :key="donation.id">
-        <SingleDonation :donation="donation" @delete="handleDelete"/>
+        <SingleDonation 
+        :donation="donation" 
+        @delete="handleDelete"/>
       </div>
     </div>
     
@@ -23,7 +25,7 @@ import getCollection from '../composables/getCollection'
 export default {
   name: "display",
   components: { SingleDonation },
-  data() {
+  data() {  
       return {
           donations: []
       }

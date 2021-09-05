@@ -47,7 +47,6 @@ const routes = [
     component: Home,
 
   },
-
   {
     path: '/add',
     name: 'addProject',
@@ -63,9 +62,6 @@ const routes = [
     name: 'display',
     component: Display,
   },
-
-
-
 ]
 
 const router = createRouter({

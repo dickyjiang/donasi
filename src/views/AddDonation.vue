@@ -92,7 +92,6 @@
       Kirim
     </button>
   </form>
-      
 
     </div>
 
@@ -116,33 +115,50 @@ export default {
   },
 
   methods: {
+
     handleSubmit() {
-      const route = useRoute();
-      const { user } = getUser()
-      // console.log(this.$emit(route.params.id));
-      const { addDoc, error } = useCollection("donasi");
-      const message = ref("");
-      const chat = {
-        displayName: this.displayName,
-        pesan: this.pesan,
-        amount: this.amount,
-        complete: false,
-        uid: user.value.id,
-        createdAt: timestamp(),
-      };
-      addDoc(chat).then(() => {
-        this.$router.push("/display");
-      });
-      // if (!error.value) {
-      //   message.value = "";
-      // }
-    },
+        let donation = {
+          displayName:  this.displayName,
+          amount: this.amount,
+          pesan: this.pesan,
+          
+        }
+
+        fetch('http://localhost:3000/donations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json'},
+          body: JSON.stringify(donation)
+        }).then(() => {
+          this.$router.push('/display')
+        }).catch((err) => console.log(err)) 
+    }
+
+    // handleSubmit() {
+    //   const route = useRoute();
+    //   const { user } = getUser()
+    //   // console.log(this.$emit(route.params.id));
+    //   const { addDoc, error } = useCollection("donasi");
+    //   const message = ref("");
+    //   const chat = {
+    //     displayName: this.displayName,
+    //     pesan: this.pesan,
+    //     amount: this.amount,
+    //     complete: false,
+    //     uid: user.value.id,
+    //     createdAt: timestamp(),
+    //   };
+    //   addDoc(chat).then(() => {
+    //     this.$router.push("/display");
+    //   });
+    //   if (!error.value) {
+    //     message.value = "";
+    //   }
+    // },
   },
 
   props: ["id"],
   setup() {
     const route = useRoute();
-    console.log("aaaa");
     console.log(route.params.id);
   },
   components: { },

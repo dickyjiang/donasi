@@ -7,8 +7,10 @@
       <div class="mt-8">
         <h3 class="text-lg text-right font-bold"> Pengirim : </h3>
         <h1 class="font-bold text-right text-4xl">{{ donation.displayName }}</h1>
-
       </div>
+      <button @click="deleteDonation">
+        delete
+      </button>
   </div>
 </template>
 
@@ -21,25 +23,25 @@ export default {
       uri: "http://localhost:3000/donations/" + this.donation.id,
     };
   },
-  // methods: {
-  //   deleteProject() {
-  //     fetch(this.uri, { method: "DELETE" })
-  //       .then(() => this.$emit("delete", this.project.id))
-  //       .catch((err) => console.log(err));
-  //   },
+  methods: {
+    deleteDonation() {
+      fetch(this.uri, { method: "DELETE" })
+        .then(() => this.$emit("delete", this.donation.id))
+        .catch((err) => console.log(err));
+    },
 
-  //   toggleComplete() {
-  //     fetch(this.uri, {
-  //       method: "PATCH",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ complete: !this.project.complete }),
-  //     })
-  //       .then(() => {
-  //         this.$emit("complete", this.project.id);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   },
-  // },
+    // toggleComplete() {
+    //   fetch(this.uri, {
+    //     method: "PATCH",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ complete: !this.project.complete }),
+    //   })
+    //     .then(() => {
+    //       this.$emit("complete", this.project.id);
+    //     })
+    //     .catch((err) => console.log(err));
+    // },
+  },
 };
 </script>
 
