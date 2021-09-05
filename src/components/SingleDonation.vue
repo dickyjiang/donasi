@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-xl shadow-xl mx-auto bg-yellow-600 p-10 my-5">
+  <div class="card-donation rounded-xl shadow-xl mx-auto bg-yellow-600 p-10 my-5">
     <div class="actions  justify-between items-baseline" >
       <h1 class="text-7xl font-bold text-center" >{{ donation.amount }}</h1>
     </div>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { projectFirestore } from '../firebase/config' 
+
 export default {
   props: ["donation"],
   data() {
@@ -24,10 +26,18 @@ export default {
     };
   },
   methods: {
-    deleteDonation() {
-      fetch(this.uri, { method: "DELETE" })
-        .then(() => this.$emit("delete", this.donation.id))
-        .catch((err) => console.log(err));
+    async deleteDonation() {
+      try {
+        await projectFirestore.collection('donasi').doc(this.donation.id).delete();
+        this.$emit("delete", this.donation.id);
+      }
+      catch(err) {
+        console.log({err})
+      }
+
+      // fetch(this.uri, { method: "DELETE" })
+      //  .then(() => this.$emit("delete", this.donation.id))
+      //  .catch((err) => console.log(err));
     },
 
     // toggleComplete() {
@@ -46,6 +56,13 @@ export default {
 </script>
 
 <style scoped>
+
+.card-donation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
 /* .project {
   margin: 20px auto;
   background: white;

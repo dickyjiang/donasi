@@ -104,6 +104,7 @@ import { useRoute,} from "vue-router";
 import getUser from '../composables/getUser'
 import useCollection from "../composables/useCollection";
 import { timestamp } from "../firebase/config";
+import { projectFirestore } from '../firebase/config' 
 
 export default {
    data() {
@@ -116,21 +117,37 @@ export default {
 
   methods: {
 
-    handleSubmit() {
+   async handleSubmit() {
         let donation = {
           displayName:  this.displayName,
           amount: this.amount,
           pesan: this.pesan,
-          
+          createdAt: timestamp(),
         }
 
-        fetch('http://localhost:3000/donations', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json'},
-          body: JSON.stringify(donation)
-        }).then(() => {
-          this.$router.push('/display')
-        }).catch((err) => console.log(err)) 
+        try {
+      const res = await projectFirestore.collection('donasi').add(donation)
+      console.log(res.docs)
+      this.$router.push('/display')
+
+      // this.donations = res.docs.map(doc => {
+      //   // console.log(doc.data())
+      //   return { ...doc.data(), id: doc.id }
+      // })
+    }
+    catch(err) {
+      console.log({err})
+      
+      // error.value = err.message
+    }
+
+        // fetch('http://localhost:3000/donations', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json'},
+        //   body: JSON.stringify(donation)
+        // }).then(() => {
+        //   this.$router.push('/display')
+        // }).catch((err) => console.log(err)) 
     }
 
     // handleSubmit() {

@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       showDetails: false,
-      uri: " http://localhost:3000/donations/" + this.donation.id,
+      // uri: " http://localhost:3000/donations/" + this.donation.id,
     };
   },
   methods: {
