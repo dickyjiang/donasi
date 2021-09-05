@@ -20,13 +20,13 @@ export default {
   data() {
     return {
       showDetails: false,
-      uri: " http://localhost:3000/projects/" + this.project.id,
+      // uri: " http://localhost:3000/donations/" + this.donation.id,
     };
   },
   methods: {
     deleteProject() {
       fetch(this.uri, { method: "DELETE" })
-        .then(() => this.$emit("delete", this.project.id))
+        .then(() => this.$emit("delete", this.donation.id))
         .catch((err) => console.log(err));
     },
 
@@ -34,10 +34,10 @@ export default {
       fetch(this.uri, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ complete: !this.project.complete }),
+        body: JSON.stringify({ complete: !this.donation.complete }),
       })
         .then(() => {
-          this.$emit("complete", this.project.id);
+          this.$emit("complete", this.donation.id);
         })
         .catch((err) => console.log(err));
     },
