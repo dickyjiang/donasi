@@ -1,16 +1,18 @@
 <template>
   <div class="card-donation rounded-xl shadow-xl mx-auto bg-yellow-600 p-3 my-5">
     <div class="actions  justify-between items-baseline" >
-      <h1 class="text-7xl font-bold text-center" >{{ donation.amount }}</h1>
+      <h1 class="text-3xl font-bold text-center" > <span class="text-lg">IDR</span>   {{ donation.amount }}</h1>
     </div>
-      <h3 class=" mt-8 text-center font-bold text-5xl font-serif" @click="showDetails = !showDetails">{{ donation.pesan }}</h3>
-      <div class="mt-8">
-        <h3 class="text-lg text-right font-bold"> Pengirim : </h3>
-        <h1 class="font-bold text-right text-4xl">{{ donation.displayName }}</h1>
+      <h3 class=" mt-2 text-center font-bold text-3xl font-serif" @click="showDetails = !showDetails">{{ donation.pesan }}</h3>
+      <div class="flex w-full justify-between">
+        <button @click="deleteDonation">
+          delete
+        </button>
+        <div>
+          <p class="text-right font-bold">Pengirim :</p>
+          <h1 class="font-semibold text-right text-xl">{{ donation.displayName }}</h1>
+        </div>
       </div>
-      <button @click="deleteDonation">
-        delete
-      </button>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="px-4 mt-10 mb-20">
     <div v-if ="donations.length">
       <div v-for="donat in donations" :key="donat.id">
         <SingleDonation 

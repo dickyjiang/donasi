@@ -1,31 +1,31 @@
 <template>
-  <div class="welcome mx-auto lg:w-2/4 md:w-3/4 mt-4 text-center">
-    <p class="text-center text-4xl lg:text-4xl font-serif font-bold text-gray-800">
-      Masukan Donasi {{ $route.params.id }}
+  <div class="welcome mx-auto lg:w-2/4 md:w-3/4 mt-10 mb-20 px-4 text-center">
+    <p class="text-center text-2xl md:text-4xl font-serif font-bold text-gray-800">
+      Masukan Donasi 
+      <span class="text-sm md:text-lg"> {{ $route.params.id }}
+        </span> 
     </p>
     <div class="p-2 border-4 bg-white border-gray-800 mt-8 shadow-2xl">
       <form @submit.prevent="handleSubmit">
-
-    <div class="border-4 border-gray-300 pt-4 pb-4 px-4 bg-gray-400">
-      <div class="flex flex-col sm:flex-row sm:flex justify-around my-3">
-        <div class=" mt-2 md:mt-0 w-1/3 mx-2 bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 py-2 px-3 ">
-          10.000
+    <div class=" pt-4 pb-4 px-4 bg-gray-300">
+        <div class="w-full flex flex-col md:flex-row justify-between gap-2 my-3 items-center">
+          <div class="py-2 px-3 w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700  ">
+            10.000
+          </div>
+          <div class=" py-2 px-3  w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
+            50.000
+          </div>
+          <div class=" py-2 px-3  w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
+            100.000
+          </div>
         </div>
-        <div class=" py-2 px-3 mt-2 md:mt-0 w-1/3 mx-2 bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
-          50.000
-        </div>
-        <div class=" py-2 px-3 mt-2 md:mt-0 w-1/3 mx-2 bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
-          100.000
-        </div>
-      </div>
-
-      <input
+        <input
         class=" p-2 border-2 border-gray-200 text-xl font-bold mt-2 focus:ring-2 focus:ring-yellow-700 "
         type="number"
         required
         placeholder="0 IDR"
         v-model="amount"
-      />
+        />
     </div>
 
     <div class="mt-8 border-4 border-gray-300 p-4">
