@@ -1,5 +1,5 @@
 <template>
-  <div class="card-donation rounded-xl shadow-xl mx-auto bg-yellow-600 p-10 my-5">
+  <div class="card-donation rounded-xl shadow-xl mx-auto bg-yellow-600 p-3 my-5">
     <div class="actions  justify-between items-baseline" >
       <h1 class="text-7xl font-bold text-center" >{{ donation.amount }}</h1>
     </div>
