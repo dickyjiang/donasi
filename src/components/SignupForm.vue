@@ -1,34 +1,13 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input
-      class="
-        border-1
-        mt-3
-        text-lg
-        font-semibold
-        focus:
-        outline-none
-        focus:ring-2 focus:ring-yellow-700
-        py-2
-        px-3
-      "
+    <input class=" border-1 mt-3 text-lg font-semibold focus: outline-none focus:ring-2 focus:ring-yellow-700 py-2 px-3"
       type="text"
       required
       placeholder="Nama"
       v-model="displayName"
     />
     <input
-      class="
-        border-1
-        mt-3
-        text-lg
-        font-semibold
-        focus:
-        outline-none
-        focus:ring-2 focus:ring-yellow-700
-        py-2
-        px-3
-      "
+      class=" border-1 mt-3 text-lg font-semibold focus: outline-none focus:ring-2 focus:ring-yellow-700 py-2 px-3"
       type="email"
       required
       placeholder="email"
@@ -72,7 +51,7 @@
         duration-300
       "
     >
-      Sign up
+      Daftar
     </button>
   </form>
 </template>
