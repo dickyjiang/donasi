@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   mode: 'jit',
   purge: [
@@ -13,8 +15,21 @@ module.exports = {
       fontFamily: {
         dmmono : "'DM Mono', monospace",
         dmserif : "DM Serif Display', serif",
-      }
-  },
+      },
+
+      colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.trueGray,
+      indigo: colors.indigo,
+      red: colors.rose,
+      yellow: colors.amber,
+
+      'turkis': '#4BABBD',
+      },
+      },
   variants: {
     extend: {},
   },
