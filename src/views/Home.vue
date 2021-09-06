@@ -1,7 +1,7 @@
 <template>
   <Navbar />
 
-  <div class=" Home mt-8 max-w-screen-md mx-auto">
+  <div class="Home mt-10 mb-20 px-4 max-w-screen-md mx-auto">
     <div v-if ="donations.length">
       <div v-for="donat in donations" :key="donat.id">
         <SingleDonation 
