@@ -1,20 +1,20 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <input
-      class=" border-1 mt-3 text-lg font-semibold focus: outline-none focus:ring-2 focus:ring-yellow-700 py-2 px-3 "
+      class=" border-1 border-yellow-500 mt-3 text-lg font-medium focus: outline-none focus:ring-2 focus:ring-yellow-500 focus:border-0 py-2 px-3 "
       type="email"
       required
       placeholder="email"
       v-model="email"
     />
     <input
-      class=" border-1 mt-3 text-lg font-semibold focus: outline-none focus:ring-2 focus:ring-yellow-700 py-2 px-3 "
+      class=" border-1 border-yellow-500 focus:border-0 mt-3 text-lg font-medium focus: outline-none focus:ring-2 focus:ring-yellow-500 py-2 px-3 "
       type="password"
       required
       placeholder="password"
       v-model="password"
     />
-    <button class=" mt-12 w-3/4 rounded max-w-lg py-2 px-3 focus:outline-none focus:bg-yellow-800 bg-yellow-600 text-lg font-semibold shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
+    <button class=" mt-12 w-3/4 rounded max-w-lg py-2 px-3 focus:outline-none focus:bg-yellow-600 bg-yellow-500 text-lg font-semibold shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
       Log in
     </button>
     <div class="error">{{ error }}</div>
