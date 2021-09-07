@@ -99,10 +99,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
 import { useRoute } from "vue-router";
-import getUser from "../composables/getUser";
-import useCollection from "../composables/useCollection";
 import { timestamp } from "../firebase/config";
 import { projectFirestore } from "../firebase/config";
 
@@ -129,67 +126,18 @@ export default {
         console.log(res.docs);
         this.$router.push({
           name: "display",
-          params: { rp: this.amount, kepada: this.displayName },
+          query: { rp: donation.amount, kepada: donation.displayName },
         });
-
-        // this.donations = res.docs.map(doc => {
-        //   // console.log(doc.data())
-        //   return { ...doc.data(), id: doc.id }
-        // })
       } catch (err) {
         console.log({ err });
-
-        // error.value = err.message
       }
-
-      // fetch('http://localhost:3000/donations', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json'},
-      //   body: JSON.stringify(donation)
-      // }).then(() => {
-      //   this.$router.push('/display')
-      // }).catch((err) => console.log(err))
     },
-
-    // handleSubmit() {
-    //   const route = useRoute();
-    //   const { user } = getUser()
-    //   // console.log(this.$emit(route.params.id));
-    //   const { addDoc, error } = useCollection("donasi");
-    //   const message = ref("");
-    //   const chat = {
-    //     displayName: this.displayName,
-    //     pesan: this.pesan,
-    //     amount: this.amount,
-    //     complete: false,
-    //     uid: user.value.id,
-    //     createdAt: timestamp(),
-    //   };
-    //   addDoc(chat).then(() => {
-    //     this.$router.push("/display");
-    //   });
-    //   if (!error.value) {
-    //     message.value = "";
-    //   }
-    // },
   },
-
   props: ["id"],
   setup() {
     const route = useRoute();
     console.log(route.params.id);
   },
-  components: {},
-  //   setup() {
-  //     const showLogin = ref(true);
-  //     const router = useRouter();
-
-  //     const enterChat = () => {
-  //       router.push({ name: "Home" });
-  //     };
-
-  //     return { showLogin, enterChat };
-  //   },
 };
 </script>
 
