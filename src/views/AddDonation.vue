@@ -8,7 +8,7 @@
     <div class="p-2 border-4 bg-white border-gray-800 mt-8 shadow-2xl">
       <form @submit.prevent="handleSubmit">
     <div class=" pt-4 pb-4 px-4 bg-gray-300">
-        <div class="w-full flex flex-col md:flex-row justify-between gap-2 my-3 items-center">
+        <div class="w-full flex flex-col md:flex-rowx justify-between gap-2 my-3 items-center">
           <div class="py-2 px-3 w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700  ">
             10.000
           </div>
