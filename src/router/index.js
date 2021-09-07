@@ -45,6 +45,7 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
+    beforeEnter: requireNoAuth
 
   },
   {
