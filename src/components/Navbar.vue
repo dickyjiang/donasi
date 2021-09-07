@@ -12,7 +12,7 @@
       </div>
       <div class="w-full flex items-center justify-between mt-3">
         <div class="flex flex-1 max-w-md">
-          <div class=" font-semibold  py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-800 bg-yellow-500 rounded border-2 border-gray-700 text-md shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
+          <div class="appearance-none font-semibold  py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-600 bg-yellow-500 rounded border-2 border-gray-700 text-md shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
             <router-link :to="{ name: 'adddDonation' , params:{ id : user.uid }}">Link Halaman Donasi anda</router-link>
           </div>
           <div class="hidden py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-800 rounded border-2 border-gray-700 text-md font-bold shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">

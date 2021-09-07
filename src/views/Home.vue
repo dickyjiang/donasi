@@ -1,40 +1,29 @@
 <template>
   <Navbar />
 
-  <div class="Home mt-10 mb-20 px-4 max-w-screen-md mx-auto">
+  <div class="Home mt-10 mb-20 px-2 w-full md:max-w-screen-md mx-auto">
     <div v-if ="donations.length">
       <div v-for="donat in donations" :key="donat.id">
-        <SingleDonation 
+        <SingleDonationReportCard
         :donation="donat" 
         @delete="handleDelete"/>
       </div>
     </div>
-    <!-- <div v-if="projects && projects.length">
-      <div v-for="project in projects" :key="project.id"
-      >
-        <SingleProject
-          :project="project"
-          @delete="handleDelete"
-          @complete="handleComplete"
-        />
-      </div>
-    </div> -->
+
   </div>
 </template>
 
 <script>
-import SingleProject from "../components/SingleProject.vue";
 import Navbar from "../components/Navbar.vue";
 import { watch } from "vue";
 import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
-import getCollection from "../composables/getCollection";
-import SingleDonation from "../components/SingleDonation.vue";
+import SingleDonationReportCard from "../components/SingleDonationReportCard.vue";
 import { projectFirestore } from '../firebase/config' 
 
 export default {
   name: "Home",
-  components: { Navbar, SingleDonation,},
+  components: { Navbar, SingleDonationReportCard,},
     data() {
       return {
         donations: [],
