@@ -1,5 +1,5 @@
 <template>
-<div class="flex flex-col min-h-screen bg-white">
+<div class=" min-h-screen bg-white">
   <div class="flex-1 mx-auto">
       <router-view/>
 

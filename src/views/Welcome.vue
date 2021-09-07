@@ -20,14 +20,14 @@
           <p class="text-center md:text-left text-gray-400 font-medium">
             Way2give adalah sebuah platform yang membantu anda mendapatkan dukungan dari penonton live streaming anda secara cepat dan mudah.
           </p>
-          <div class="buttonWrapper mt-8 md:mt-8 flex flex-col w-3/4 mx-auto md:mx-0 md:flex-row gap-4 md:gap-8">
+          <!-- <div class="buttonWrapper mt-8 md:mt-8 flex flex-col w-3/4 mx-auto md:mx-0 md:flex-row gap-4 md:gap-8">
             <button class="md:w-1/2 rounded max-w-lg py-2 px-5 focus:outline-none focus:bg-yellow-600 bg-yellow-500 text-lg text-white font-semibold shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 " >
               Login
             </button>
             <button class="md:w-1/2 rounded max-w-lg py-2 px-5 focus:outline-none focus:bg-yellow-600 bg-turkis text-lg text-white font-semibold shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
               Daftar
             </button>
-          </div>
+          </div> -->
       </div>
       <div
         class="px-3 py-5 border-2 bg-white border-gray-500 mt-8 md:mt-0 shadow-2xl max-w-lg mx-auto"
