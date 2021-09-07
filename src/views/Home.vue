@@ -2,11 +2,15 @@
   <Navbar />
 
   <div class="Home mt-10 mb-20 px-2 w-full md:max-w-screen-md mx-auto">
-    <div v-if ="donations.length">
-      <div v-for="donat in donations" :key="donat.id">
+    <div v-if="donations.length">
+      <div
+        v-for="donat in donations"
+        :key="donat.id"
+      >
         <SingleDonationReportCard
-        :donation="donat" 
-        @delete="handleDelete"/>
+          :donation="donat"
+          @delete="handleDelete"
+        />
       </div>
     </div>
 
@@ -19,20 +23,20 @@ import { watch } from "vue";
 import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
 import SingleDonationReportCard from "../components/SingleDonationReportCard.vue";
-import { projectFirestore } from '../firebase/config' 
+import { projectFirestore } from "../firebase/config";
 
 export default {
   name: "Home",
-  components: { Navbar, SingleDonationReportCard,},
-    data() {
-      return {
-        donations: [],
-      }
-    },
+  components: { Navbar, SingleDonationReportCard },
+  data() {
+    return {
+      donations: [],
+    };
+  },
 
-    async mounted() {
-      await this.getDonations();
-    },
+  async mounted() {
+    await this.getDonations();
+  },
 
   setup() {
     const { user } = getUser();
@@ -40,7 +44,10 @@ export default {
 
     watch(user, () => {
       if (!user.value) {
+        console.log("gak ada user, kudu na ka welcome");
         router.push({ name: "Welcome" });
+      } else {
+        console.log("naha ka dieu");
       }
     });
   },
@@ -57,23 +64,24 @@ export default {
       });
       p.complete = !p.complete;
     },
-    
+
     async getDonations() {
       try {
-      const res = await projectFirestore.collection('donasi').orderBy('createdAt', 'desc').get()
-      console.log(res.docs)
+        const res = await projectFirestore
+          .collection("donasi")
+          .orderBy("createdAt", "desc")
+          .get();
+        console.log(res.docs);
 
-      this.donations = res.docs.map(doc => {
-        // console.log(doc.data())
-        return { ...doc.data(), id: doc.id }
-      })
-    }
-    catch(err) {
-      console.log({err})
-      // error.value = err.message
-    }
-
-    }
+        this.donations = res.docs.map((doc) => {
+          // console.log(doc.data())
+          return { ...doc.data(), id: doc.id };
+        });
+      } catch (err) {
+        console.log({ err });
+        // error.value = err.message
+      }
+    },
   },
 
   // async mounted() {

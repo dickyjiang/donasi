@@ -45,6 +45,7 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
+    beforeEnter: requireAuth
 
   },
   {
@@ -53,7 +54,7 @@ const routes = [
     component: AddProject,
   },
   {
-    path: '/donation/:id',
+    path: '/donation/:id/:nama',
     name: 'adddDonation',
     component: AddDonation,
   },
