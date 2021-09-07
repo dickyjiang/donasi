@@ -1,38 +1,42 @@
 <template>
   <div class="px-4 mt-10 mb-20">
-    <div v-if ="donations.length">
-      <div v-for="donat in donations" :key="donat.id">
-        <SingleDonation 
-        :donation="donat" 
-        @delete="handleDelete"/>
+    <h1> aaaaa {{ $route.params.rp }} {{ $router.params.kepada }}</h1>
+    <div v-if="donations.length">
+      <div
+        v-for="donat in donations"
+        :key="donat.id"
+      >
+        <SingleDonation
+          :donation="donat"
+          @delete="handleDelete"
+        />
       </div>
     </div>
-    
+
   </div>
-   
+
 </template>
 
 <script>
-import { ref } from 'vue'
-import SingleDonation from '../components/SingleDonation.vue'
-import { projectFirestore } from '../firebase/config' 
+import { ref } from "vue";
+import SingleDonation from "../components/SingleDonation.vue";
+import { projectFirestore } from "../firebase/config";
 
-import { watch } from 'vue'
-import {useRouter} from 'vue-router'
-import getUser from '../composables/getUser'
-import getCollection from '../composables/getCollection'
-
+import { watch } from "vue";
+import { useRouter } from "vue-router";
+import getUser from "../composables/getUser";
+import getCollection from "../composables/getCollection";
 
 export default {
   name: "display",
+  props: ["rp", "kepada"],
   components: { SingleDonation },
-  data() {  
-      return {
-          donations: []
-      }
+  data() {
+    return {
+      donations: [],
+    };
   },
   async mounted() {
-
     await this.getDonations();
 
     // fetch('http://localhost:3000/donations')
@@ -50,10 +54,10 @@ export default {
     //     router.push({ name: "Welcome" });
     //   }
     // });
-    return {}
+    return {};
   },
   // data() {
-  //   return { 
+  //   return {
   //     donations: [],
   //   };
   // },
@@ -75,25 +79,25 @@ export default {
       });
       p.complete = !p.complete;
     },
-    
+
     async getDonations() {
       try {
-      const res = await projectFirestore.collection('donasi').orderBy('createdAt', 'desc').get()
-      console.log(res.docs)
+        const res = await projectFirestore
+          .collection("donasi")
+          .orderBy("createdAt", "desc")
+          .get();
+        console.log(res.docs);
 
-      this.donations = res.docs.map(doc => {
-        // console.log(doc.data())
-        return { ...doc.data(), id: doc.id }
-      })
-    }
-    catch(err) {
-      console.log({err})
-      // error.value = err.message
-    }
-
-    }
+        this.donations = res.docs.map((doc) => {
+          // console.log(doc.data())
+          return { ...doc.data(), id: doc.id };
+        });
+      } catch (err) {
+        console.log({ err });
+        // error.value = err.message
+      }
+    },
   },
-
 };
 </script>
 
