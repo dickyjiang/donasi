@@ -53,7 +53,7 @@ const routes = [
     component: AddProject,
   },
   {
-    path: '/donation/:id',
+    path: '/donation/:id/:nama',
     name: 'adddDonation',
     component: AddDonation,
   },

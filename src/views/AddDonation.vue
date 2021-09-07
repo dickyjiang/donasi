@@ -2,7 +2,9 @@
   <div class="welcome mx-auto lg:w-2/4 md:w-3/4 mt-10 mb-20 px-4 text-center">
     <p class="text-center text-2xl md:text-4xl font-serif font-bold text-gray-800">
       Masukan Donasi
-      <span class="text-sm md:text-lg"> {{ $route.params.id }}
+      <span class="text-sm md:text-lg">
+        <!-- {{ $route.params.id }} -->
+        {{ $route.params.nama }}
       </span>
     </p>
     <div class="p-2 border-4 bg-white border-gray-800 mt-8 shadow-2xl">
@@ -133,7 +135,7 @@ export default {
       }
     },
   },
-  props: ["id"],
+  props: ["id", "nama"],
   setup() {
     const route = useRoute();
     console.log(route.params.id);
