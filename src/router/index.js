@@ -15,7 +15,6 @@ const requireAuth = (to, from, next) => {
   } else {
     next()
   }
-
 }
 
 const requireNoAuth = (to, from, next) => {
