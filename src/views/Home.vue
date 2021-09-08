@@ -4,11 +4,11 @@
   <div class="Home mt-10 mb-20 px-2 w-full md:max-w-screen-md mx-auto">
     <div v-if="donations.length">
       <div
-        v-for="donat in donations"
-        :key="donat.id"
+        v-for="donation in donations"
+        :key="donation.id"
       >
         <SingleDonationReportCard
-          :donation="donat"
+          :donation="donation"
           @delete="handleDelete"
         />
       </div>
