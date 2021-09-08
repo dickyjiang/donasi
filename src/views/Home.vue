@@ -4,21 +4,23 @@
   <div class="Home mt-10 mb-20 px-2 w-full md:max-w-screen-md mx-auto">
     <div v-if="donations.length">
       <div
-        v-for="donat in donations"
-        :key="donat.id"
+        v-for="donation in donations"
+        :key="donation.id"
       >
         <SingleDonationReportCard
-          :donation="donat"
+          :donation="donation"
           @delete="handleDelete"
         />
       </div>
     </div>
-
   </div>
+
+  <Footer />
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
 import { watch } from "vue";
 import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
@@ -27,7 +29,7 @@ import { projectFirestore } from "../firebase/config";
 
 export default {
   name: "Home",
-  components: { Navbar, SingleDonationReportCard },
+  components: { Navbar, SingleDonationReportCard, Footer },
   data() {
     return {
       donations: [],
