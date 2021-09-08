@@ -1,13 +1,13 @@
 <template>
   <div class="welcome mx-auto lg:w-2/4 md:w-3/4 mt-10 mb-20 px-4 text-center">
-    <p class="text-center text-2xl md:text-4xl font-serif font-bold text-gray-800">
-      Masukan Donasi
-      <span class="text-sm md:text-lg">
+    <p class="text-center text-2xl md:text-3xl font-serif font-bold text-gray-800">
+      Masukan Donasi Untuk
+    </p>
+    <h2 class="text-xl md:text-4xl font-bold font-serif my-4">
         <!-- {{ $route.params.id }} -->
         {{ $route.params.nama }}
-      </span>
-    </p>
-    <div class="p-2 border-4 bg-white border-gray-800 mt-8 shadow-2xl">
+      </h2>
+    <div class="p-2 border-2 bg-white border-yellow-500 mt-8 shadow-xl">
       <form @submit.prevent="handleSubmit">
         <div class=" pt-4 pb-4 px-4 bg-gray-300">
           <div class="w-full flex flex-col md:flex-row justify-between gap-2 my-3 items-center">
@@ -91,22 +91,24 @@
         </div>
 
         <!-- <div class="error">{{ error }}</div> -->
-        <button class=" mt-12 w-full max-w-lg py-2 px-3 focus:outline-none focus:bg-yellow-800 rounded-none bg-yellow-600 text-lg font-semibold shadow-lg transform hover:-translate-y-1 ease-in-out duration-700 ">
+        <button class=" mt-12 w-full max-w-md py-3 px-3 focus:outline-none focus:bg-yellow-600 rounded-none bg-yellow-500 text-xl font-semibold shadow-lg transform hover:-translate-y-1 ease-in-out duration-700 ">
           Kirim
         </button>
       </form>
-
     </div>
-
   </div>
+  <Footer />
 </template>
 
 <script>
 import { useRoute } from "vue-router";
 import { timestamp } from "../firebase/config";
 import { projectFirestore } from "../firebase/config";
+import Footer from '../components/Footer.vue'
 
 export default {
+  components :  {Footer},
+
   data() {
     return {
       displayName: "",
@@ -129,7 +131,7 @@ export default {
         console.log(res.docs);
         this.$router.push({
           name: "display",
-          query: { rp: donation.amount, kepada: donation.displayName },
+          query: { rp: donation.amount, kepada: donation.displayName, pesan: donation.pesan },
         });
       } catch (err) {
         console.log({ err });
