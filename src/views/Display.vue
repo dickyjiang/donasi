@@ -7,7 +7,7 @@
           <div class="flex justify-between gap-10 items-stretch">
                 <div class="flex-1 flex  items-end text-6xl">
                   <div class="text-2xl">IDR</div>
-                  <div> {{ $route.query.rp }} </div>
+                  <div> {{ formattedDate}} </div>
                 </div>
                 
           </div>
@@ -34,7 +34,19 @@
 <script>
 export default {
   name: "display",
-  props: ["rp", "kepada"],
+  props: ["rp", "kepada", "pesan"],
+
+    setup(props) {
+      let date = new Date(props.rp);
+      let day = date.getDate();
+      let month = date.getMonth();
+      let year = date.getFullYear();
+
+      let formattedDate = day + "/" + month + "/" + year;
+
+      return { formattedDate }
+    },
+
   data() {
     return {
       donations: [],

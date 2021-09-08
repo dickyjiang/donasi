@@ -14,17 +14,29 @@
 import { projectFirestore } from '../firebase/config' 
 import { FormatDistanceToNow } from 'date-fns'
 import { computed } from '@vue/reactivity';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 
 export default {
   props: ["donation"],
-  data() {
-    return {
-      // showDetails: false,
-      // uri: "http://localhost:3000/donations/" + this.donation.id,
-    };
-  },
+
+  // setup(props) {
+  //   let date = new Date(props.donation.createdAt);
+  //   let day = date.getDate();
+  //   let month = date.getMonth();
+  //   let year = date.getFullYear();
+
+  //   let formattedDate = day + "/" + month + "/" + year;
+
+  //     return { formattedDate }
+  //   },
+  
+
+  // data() {
+  //   return {
+  //     // showDetails: false,
+  //     // uri: "http://localhost:3000/donations/" + this.donation.id,
+  //   };
+  // },
 
   //coba formated timestamp 
 
