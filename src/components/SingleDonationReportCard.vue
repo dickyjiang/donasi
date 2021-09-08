@@ -33,6 +33,9 @@ export default {
     },
 
   },
+  let createdAt = { seconds: 1549843200, nanoseconds: 0 }, // firebase data     
+  let myDate = new Date(timestamp.seconds * 1000), // date object
+  console.log(myDate)
 };
 </script>
 
