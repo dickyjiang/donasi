@@ -131,7 +131,7 @@ export default {
         console.log(res.docs);
         this.$router.push({
           name: "display",
-          query: { rp: donation.amount, kepada: donation.displayName },
+          query: { rp: donation.amount, kepada: donation.displayName, pesan: donation.pesan },
         });
       } catch (err) {
         console.log({ err });
