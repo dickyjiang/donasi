@@ -1,5 +1,5 @@
 <template>
-<div class="min-h-screen bg-turkis">
+<div class="min-h-screen bg-turkis p-4">
     <div class="flex flex-col h-screen justify-center items-center  font-semibold max-w-lg mx-auto ">
 
       <div class="border-2 border-green-300 py-8 px-8 rounded-3xl text-white  shadow-xl w-full">

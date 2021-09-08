@@ -1,9 +1,9 @@
 <template>
   <div class="welcome mx-auto lg:w-2/4 md:w-3/4 mt-10 mb-20 px-4 text-center">
-    <p class="text-center text-2xl md:text-3xl font-serif font-bold text-gray-800">
+    <p class="text-center text-2xl md:text-3xl text-gray-400 font-serif font-bold text-gray-800">
       Masukan Donasi Untuk
     </p>
-    <h2 class="text-xl md:text-4xl font-bold font-serif my-4">
+    <h2 class="text-3xl md:text-5xl font-bold font-serif my-4">
         <!-- {{ $route.params.id }} -->
         {{ $route.params.nama }}
       </h2>
@@ -51,13 +51,9 @@
 
         <!-- /pilih payment gateway -->
 
-        <div class=" flex flex-col md:flex-row md:items-center justify-around items-baseline mt-6 border-4 border-gray-300 p-2 ">
+        <div class=" grid gap-4 md:flex md:flex-row md:items-center justify-around items-baseline mt-6 border-4 border-gray-300 p-2 ">
           <div class="p-2">
-            <img
-              class="h-6 mb-3"
-              src="../assets/Logo_ovo_purple.svg"
-              alt="ovo"
-            />
+            <img class="h-6 mb-3" src="../assets/Logo_ovo_purple.svg" alt="ovo"/>
             <input
               type="radio"
               name="paymentGateway"
@@ -97,7 +93,7 @@
       </form>
     </div>
   </div>
-  <Footer />
+  <!-- <Footer /> -->
 </template>
 
 <script>
