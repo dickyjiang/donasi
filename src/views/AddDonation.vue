@@ -95,18 +95,20 @@
           Kirim
         </button>
       </form>
-
     </div>
-
   </div>
+  <Footer />
 </template>
 
 <script>
 import { useRoute } from "vue-router";
 import { timestamp } from "../firebase/config";
 import { projectFirestore } from "../firebase/config";
+import Footer from '../components/Footer.vue'
 
 export default {
+  components :  {Footer},
+
   data() {
     return {
       displayName: "",

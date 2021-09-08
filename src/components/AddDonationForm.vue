@@ -87,6 +87,7 @@
       Kirim
     </button>
   </form>
+
 </template>
 
 <script>
@@ -98,6 +99,7 @@ import { timestamp } from "../firebase/config";
 import { useRoute, useRouter } from "vue-router";
 
 export default {
+
   data() {
     return {
       displayName: "",

@@ -13,12 +13,14 @@
         />
       </div>
     </div>
-
   </div>
+
+  <Footer />
 </template>
 
 <script>
 import Navbar from "../components/Navbar.vue";
+import Footer from "../components/Footer.vue";
 import { watch } from "vue";
 import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
@@ -27,7 +29,7 @@ import { projectFirestore } from "../firebase/config";
 
 export default {
   name: "Home",
-  components: { Navbar, SingleDonationReportCard },
+  components: { Navbar, SingleDonationReportCard, Footer },
   data() {
     return {
       donations: [],
