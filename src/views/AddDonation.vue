@@ -10,25 +10,26 @@
     <div class="p-2 border-2 bg-white border-yellow-500 mt-8 shadow-xl">
       <form @submit.prevent="handleSubmit">
         <div class=" pt-4 pb-4 px-4 bg-gray-300">
-          <div class="w-full flex flex-col md:flex-row justify-between gap-2 my-3 items-center">
+          <div class="w-full flex flex-col md:flex-row justify-between gap-4 my-3 items-center">
             <div class="py-2 px-3 w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700  ">
               10.000
             </div>
-            <div class=" py-2 px-3  w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
+            <div class=" py-2 px-3  w-full md:w-1/3  bg-green-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
               50.000
             </div>
-            <div class=" py-2 px-3  w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
+            <div class=" py-2 px-3  w-full md:w-1/3  bg-turkis border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
               100.000
             </div>
 
           </div>
           <input
-            class=" p-2 border-2 border-gray-200 text-xl font-bold mt-2 focus:ring-2 focus:ring-yellow-700 "
+            class="appearance-none form p-2  border-gray-200 text-xl font-bold mt-2 focus:ring-2 focus:ring-yellow-600 "
             type="number"
             required
             placeholder="0 IDR"
             v-model="amount"
           />
+          <p class=" italic mt-4 text-sm"> Maksimal jumlah yang dapat dikirimkan adalah</p>
         </div>
 
         <div class="mt-8 border-4 border-gray-300 p-4">
@@ -39,6 +40,7 @@
             placeholder="Nama"
             v-model="displayName"
           />
+          <p class="font-medium italic mt-2 text-gray-500">*opsional, jika tidak diisi, akan ditampilkan sebagai NN</p>
 
           <div class="mt-6">
             <p class="text-left pl-3 text-md font-bold mt-3 text-gray-400">Pesan</p>
@@ -46,6 +48,8 @@
               class=" border-4 border-gray-300 text-xl font-bold mt-3 focus: outline-none focus:ring-2 focus:ring-yellow-700 py-2 px-3 "
               v-model="pesan"
             ></textarea>
+
+            <p class="font-medium italic mt-2 text-gray-500">*opsional</p>
           </div>
         </div>
 

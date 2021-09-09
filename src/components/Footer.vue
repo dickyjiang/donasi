@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed bottom-0 w-full py-8 bg-gray-700 text-gray-400 mx-auto">
+    <div class="w-full py-8 bg-gray-700 text-gray-400 mx-auto">
      <div class="flex px-10 justify-between w-full text-sm font-serif">
        <p>
           Palapa After School © 2021
