@@ -31,7 +31,14 @@ module.exports = {
       },
       },
   variants: {
-    extend: {},
+    extend: {
+    zIndex: {
+         '-10': '-10',
+    },
+    margin: {
+        '-72': '-18rem',
+              }
   },
   plugins: [require('@tailwindcss/forms')],
 }}
+}
