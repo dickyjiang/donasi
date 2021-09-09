@@ -9,7 +9,7 @@
           <div class="header md:max-w-md">
               <div class="mt-8 mb-8 ">
                   <h2 class="text-center md:text-left text-5xl lg:text-7xl font-serif font-extrabold text-yellow-500 text-yell mt-4">
-                    Way2Give
+                    Ways2Give
                   </h2>
                   <h3 class="text-center md:text-left font-bold text-lg text-gray-500">
                     Support Live streaming made easy
