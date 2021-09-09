@@ -2,7 +2,7 @@
     <!-- <div>
     <Navbar />
   </div> -->
-  <div class="relative bg-yellow-50">
+  <div class="relative bg-yellow-50 m-h-screen">
       <img class="absolute top-0 inset-x-72 -mt-72 " src="../assets/blob_yellow.svg">
       <div class="relative px-12 pt-12 pb-10 mx-auto max-w-5x ">
         <div class="flex flex-col md:flex-row gap-10 items-center justify-center  mx-auto md:items-start">
