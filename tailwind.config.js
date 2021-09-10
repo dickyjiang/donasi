@@ -26,8 +26,12 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
+      turkis: {
+        light : '#74D5E7',
+        DEFAULT : '#4BABBD',
+        dark : '#399CAE',
+      },
 
-      'turkis': '#4BABBD',
       },
       },
   variants: {
