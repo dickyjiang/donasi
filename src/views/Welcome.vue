@@ -4,7 +4,7 @@
   </div> -->
   <div class="relative bg-yellow-50 m-h-screen overflow-hidden">
     <img
-      class="absolute top-0 inset-x-72 -mt-72 "
+      class="absolute top-0 inset-x-1/2 -mt-72 "
       src="../assets/blob_yellow.svg"
     />
 
@@ -42,7 +42,7 @@
             Halo,Selamat datang
           </h2>
           <p class="text-center md:text-left text-gray-400 font-medium mt-2">
-            Way2give adalah sebuah platform yang membantu streamer mendapatkan
+            Way2give adalah sebuah platform yang membantu anda mendapatkan
             dukungan dari penonton live streaming dengan mudah.
           </p>
           <div
@@ -104,15 +104,15 @@
           </p>
         </div>
         <div
-          class="px-3 py-5 border-4 bg-white border-gray-600 mt-8 shadow-2xl mx-auto"
+          class="px-3 py-5 border-2 bg-white border-gray-500 mt-8 md:mt-0 shadow-2xl max-w-lg"
           v-else
         >
-          <h2 class="font-semibold text-2xl text-yellow-500">Daftar</h2>
+          <h2 class="font-semibold text-2xl text-center text-turkis">Daftar</h2>
           <SignupForm @signup="enterChat" />
-          <p class="text-md font-dmmono text-gray-800 mt-8">
+          <p class="text-md font-dmmono text-gray-800 mt-8 text-center">
             Sudah punya akun?
             <span
-              class="cursor-pointer italic font-bold text-yellow-700"
+              class="cursor-pointer italic font-bold text-yellow-500"
               @click="showLogin = true"
             >
               Login </span
