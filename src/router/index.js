@@ -3,6 +3,7 @@ import Welcome from '../views/Welcome.vue'
 // import Chatroom from '../views/Chatroom.vue'
 import Home from '../views/Home.vue'
 import AddProject from '../views/AddProject.vue'
+import CreateProfile from '../views/CreateProfile.vue'
 import AddDonation from '../views/AddDonation.vue'
 import Display from '../views/Display.vue'
 import { projectAuth } from '../firebase/config'
@@ -61,6 +62,11 @@ const routes = [
     path: '/display',
     name: 'display',
     component: Display,
+  },
+  {
+    path: '/createprofile',
+    name: 'createprofile',
+    component: CreateProfile,
   },
 ]
 
