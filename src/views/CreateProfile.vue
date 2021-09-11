@@ -6,11 +6,11 @@
     </label>
     <input class="appearance-none " type="text" required placeholder="Nama yang akan ditampilkan" v-model="profileName">
     <textarea class="mt-12" placeholder="Mengenai anda ..." v-model="description"></textarea>
-    <div>
-      <label>
-        Profile Picture
+    <div class="mt-2">
+      <label class=" w-3/4 mx-auto text-center bg-turkis text-white p-2 rounded  ">
+          <input class="hidden" type="file" @change="handleChange"> upload profile picture
       </label>
-      <input class="appearance-none" type="file">
+      <div> {{fileError}}</div>
     </div>
     <div>
       <label>
@@ -30,12 +30,30 @@ export default {
   setup() {
     const profileName = ref('')
     const description = ref('')
+    const file = ref(null)
+    const fileError = ref(null)
 
     const handleSubmit = () => {
       console.log(profileName.value, description.value)
     }
 
-    return { profileName, description, handleSubmit }
+    const types = ['image/png', 'image/jpg']
+
+    const handleChange = (e) => {
+      const selected =  e.target.files[0]
+      console.log (selected)
+
+      if (selected && types.includes('selected.type')) {
+        file.value = selected
+      } else {
+        file.value = null
+        fileError.value = 'image harus png atau jpg'
+      }
+
+
+    }
+
+    return { profileName, description, handleSubmit, handleChange }
   }
 
 }
