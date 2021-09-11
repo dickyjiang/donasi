@@ -2,13 +2,13 @@
   <!-- <div>
     <Navbar />
   </div> -->
-  <div class="relative bg-yellow-50 m-h-screen overflow-hidden">
+  <div class="relative bg-yellow-50 overflow-hidden">
     <img
       class="absolute top-0 inset-x-1/2 -mt-72 "
       src="../assets/blob_yellow.svg"
     />
 
-    <svg
+    <!-- <svg
       class="absolute bottom-0 right-0"
       width="1156"
       height="531"
@@ -19,11 +19,11 @@
         d="M990.545 13.2298C882.887 30.0286 778.107 68.4876 718.612 131.694C671.35 181.906 654.683 244.917 595.544 288.934C541.49 329.178 459.636 347.125 379.862 352.756C341.678 355.443 302.657 355.771 266.073 363.668C206.307 376.57 159.641 408.208 119.619 440.996C81.563 472.183 46.5095 505.822 1.05256e-06 531L1156 531L1156 0C1100.26 1.16915 1044.87 4.75855 990.545 13.2298Z"
         fill="#4BABBD"
       />
-    </svg>
+    </svg> -->
 
-    <div class="relative px-12 pt-12 pb-32 mx-auto max-w-5x">
+    <div class="relative px-12 pt-12 pb-12 mx-auto max-w-5xl">
       <div
-        class="flex flex-col md:flex-row gap-10 items-center justify-center  mx-auto md:items-start"
+        class="flex flex-col md:flex-row gap-10 items-center justify-center mx-auto md:items-start"
       >
         <div class="header flex flex-col md:items-start md:max-w-md">
           <div class=" mb-8 flex flex-col items-center">
@@ -62,28 +62,48 @@
         </div>
 
         <div class="relative pb-12">
-          <img class="p-6 w-md max-w-lg" src="../assets/blob_man.png" alt="" />
+          <img
+            class="p-6 w-auto max-w-sm "
+            src="../assets/blob_man.png"
+            alt=""
+          />
           <transition appear name="card-2">
             <img
-              class="inset-y-2/3 inset-x-56 absolute"
+              class="inset-y-2/3 inset-x-56 absolute w-56"
               src="../assets/card_turkis.png"
             />
           </transition>
 
           <transition appear name="card-1">
             <img
-              class="inset-y-1/2 inset-x-12 absolute"
+              class="inset-y-1/2 inset-x-12 absolute w-56"
               src="../assets/card_green.png"
             />
           </transition>
 
           <transition appear name="card-3">
             <img
-              class="inset-y-3/4 inset-x-28 absolute"
+              class="inset-y-3/4 inset-x-28 absolute w-56"
               src="../assets/card_yellow.png"
             />
           </transition>
         </div>
+      </div>
+    </div>
+     <div class="bg-turkis px-12 pt-8 pb-12">
+       <div class="flex flex-col md:flex-row gap-10 items-center justify-center mx-auto max-w-3xl md:items-start">
+         <div class="w-full md:w-2/3">
+          <H2 class="text-center font-serif font-semibold text-yellow-100 text-4xl mb-10">3 Langkah mudah</H2>
+          <div>
+            <h3 class="font-serif font-semibold text-yellow-100 text-xl">Daftar</h3>
+            <p class="mt-2 text-white">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore officiis dignissimos autem optio ex ipsum soluta quia! Sequi recusandae architecto, doloribus officiis consequatur fugiat totam, nisi dolore magni magnam quasi?</p>
+          </div>
+         </div>
+         <div>
+           <img src="../assets/blob_beauty.png" alt="">
+         </div>
+       </div>
       </div>
       <div id="login-modal" class="flex justify-center">
         <div
@@ -120,7 +140,6 @@
           </p>
         </div>
       </div>
-    </div>
   </div>
   <Footer />
 </template>
