@@ -23,10 +23,11 @@
 
 <script>
 import { ref } from 'vue'
-import  useStorage  from '../composables/useStorage'
+import useStorage  from '../composables/useStorage'
 import useCollection from '../composables/useCollection'
 import getUser from '../composables/getUser'
 import { timestamp } from '../firebase/config'
+import { useRouter } from 'vue-router'
 
 
 export default {
@@ -34,6 +35,7 @@ export default {
     const { filePath, url, uploadImage } = useStorage()
     const { error, addDoc } = useCollection('profiles')
     const { user } = getUser()
+    const router = useRouter()
 
     const profileName = ref('')
     const description = ref('')
@@ -45,7 +47,7 @@ export default {
       if (file.value){
         isPending.value = true
         await uploadImage(file.value)
-        await addDoc ({
+        const res = await addDoc ({
           profileName: profileName.value,
           description: description.value,
           userId: user.value.uid,
@@ -58,7 +60,7 @@ export default {
         isPending.value = false
 
         if (!error.value) {
-          console.log('profile added')
+          router.push({ name: 'UserProfile', params: { id: res.id }})
         }
 
         // console.log('image uploaded, url: ',url.value)

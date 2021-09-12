@@ -3,7 +3,7 @@
     <!-- background image pilihan user -->
     <div class="absolute top-0 w-full">
       <img class="w-full" src="../assets/bg-profile.jpg" alt="">
-
+      <!-- <img :src="profiles.avatarUrl"> -->
     </div>
     <div class=" relative z-99 lg:w-2/4 md:w-3/4 pt-4 mt-20 px-2 text-center bg-white shadow-2xl rounded-xl mx-8 pb-10">
       <div class="flex flex-col justify-center items-center py-2">
@@ -113,10 +113,16 @@
 import { useRoute } from "vue-router";
 import { timestamp } from "../firebase/config";
 import { projectFirestore } from "../firebase/config";
-import Footer from '../components/Footer.vue'
+import getCollection from '../composables/getCollection';
 
 export default {
-  components :  {Footer},
+
+  setup() {
+    const { error, documents} = getCollection('profiles')
+
+    return { error, documents}
+  },
+  
 
   data() {
     return {
@@ -147,10 +153,9 @@ export default {
       }
     },
   },
-  props: ["id", "nama"],
-  setup() {
-    const route = useRoute();
-    console.log(route.params.id);
-  },
+  props: ["id", "nama", "profiles"],
+
+  
+  
 };
 </script>
