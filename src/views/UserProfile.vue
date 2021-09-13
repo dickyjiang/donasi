@@ -30,10 +30,11 @@
 import getCollection from '../composables/getCollection'
 import getUserProfile from '../composables/getUserProfile'
 import getUser from '../composables/getUser'
-import { computed } from '@vue/reactivity'
+import { computed } from 'vue'
+
 
 export default {
-    props: ['id'],
+    props: ["id", "nama", "profiles"],
     
     setup(props){
       const { error, document: profile } = getUserProfile('profiles', props.id)
