@@ -1,4 +1,7 @@
 <template>
+<div class="w-full bg-red-700 text-white py-3 text-center font-semibold">
+    *Under Development* website ini masih dalam status percobaan!
+  </div>
   <div class="bg-yellow-50 min-h-screen">
     <div class="p-4 w-full  md:max-w-2xl mx-auto">
       <h2 class="font-bold font-serif text-3xl text-center text-gray-700">
