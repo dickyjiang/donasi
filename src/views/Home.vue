@@ -1,6 +1,25 @@
 <template>
   <Navbar />
 
+  <div class="flex gap-4 mt-10 items-stretch justify-center mx-auto max-w-xl px-4">
+    <div class=" w-1/2  tracking-tight py-1 px-3 text-center text-turkis focus:outline-none focus:bg-yellow-600 bg-white rounded border-2 border-turkis shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 " >
+      <h2 class="text-lg font-semibold">Total Dukungan</h2>
+      <div class="flex justify-center gap-4 items-baseline">
+        <p class="font-semibold">IDR</p>
+        <h2 class="text-3xl font-bold mt-2">0.00</h2>
+      </div>
+    </div>
+    <div class="w-1/2  py-1 px-3 text-center text-turkis focus:outline-none focus:bg-yellow-600 bg-white rounded border-2 border-turkis shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 hover:bg-turkis hover:text-white">
+      <div>
+        <h2 class="font-semibold  text-lg tracking-tight"> Saldo</h2>
+      </div>
+      <div class="flex justify-center gap-4 items-baseline">
+        <p class="font-semibold ">IDR</p>
+        <h2 class="text-3xl font-bold mt-2">0.00</h2>
+      </div>
+    </div>
+  </div>
+
   <div class="Home mt-10 mb-20 px-2 w-full md:max-w-screen-md mx-auto">
     <div v-if="donations.length">
       <div
