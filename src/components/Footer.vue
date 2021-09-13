@@ -3,16 +3,17 @@
     <div
       class="flex flex-col px-10 justify-between items-center w-full md:max-w-3xl mx-auto text-sm font-serif"
     >
-      <div class=" flex justify-between w-full">
+      <div class=" flex flex-col md:flex-row items-center md:items-start gap-8 justify-between w-full mt-8">
         <div class="flex flex-col gap-2 items-center">
           <div>
              <router-link :to="{ name: 'Welcome' }">
                 <img class="w-12" src="../assets/logo.png"/>
               </router-link>
           </div>
-          <h2 class="font-serif font-bold text-lg">Way2Give</h2>
+          <h2 class="font-serif font-bold text-lg ">Way2Give</h2>
         </div>
-        <ul>
+
+        <ul class="leading-loose">
           <li>
             <router-link :to="{ name: 'FAQ' }">F.A.Q.</router-link>
           </li>
@@ -25,7 +26,7 @@
             >
           </li>
         </ul>
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-4">
           <div class="flex gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +56,11 @@
               />
             </svg>
             <a href="tel:+628122489890">08122489890</a>
+          </div>
+          <div class="font-sans text-xs pl-8">
+            Alamat: <br>
+            Komp. Kopo Permai 30A No.8<br>
+            BANDUNG - INDONESIA
           </div>
         </div>
       </div>

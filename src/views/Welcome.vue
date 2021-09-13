@@ -2,13 +2,16 @@
   <!-- <div>
     <Navbar />
   </div> -->
-  <div class="relative bg-yellow-50 m-h-screen overflow-hidden">
+  <div class="w-full bg-red-700 text-white py-3 text-center font-semibold">
+    *Under Development* website ini masih dalam status percobaan!
+  </div>
+  <div class="relative bg-yellow-50 m-h-screen overflow-hidden pb-24">
     <img
       class="absolute top-0 inset-x-1/2 -mt-72 "
       src="../assets/blob_yellow.svg"
     />
 
-    <svg
+    <!-- <svg
       class="absolute bottom-0 right-0"
       width="1156"
       height="531"
@@ -19,7 +22,7 @@
         d="M990.545 13.2298C882.887 30.0286 778.107 68.4876 718.612 131.694C671.35 181.906 654.683 244.917 595.544 288.934C541.49 329.178 459.636 347.125 379.862 352.756C341.678 355.443 302.657 355.771 266.073 363.668C206.307 376.57 159.641 408.208 119.619 440.996C81.563 472.183 46.5095 505.822 1.05256e-06 531L1156 531L1156 0C1100.26 1.16915 1044.87 4.75855 990.545 13.2298Z"
         fill="#4BABBD"
       />
-    </svg>
+    </svg> -->
 
     <div class="relative px-12 pt-12 pb-32 mx-auto max-w-5x">
       <div
@@ -27,7 +30,9 @@
       >
         <div class="header flex flex-col md:items-start md:max-w-md">
           <div class=" mb-8 flex flex-col items-center">
-            <h2 class=" text-6xl lg:text-7xl font-serif font-extrabold text-yellow-500 mt-4">
+            <h2
+              class=" text-6xl lg:text-7xl font-serif font-extrabold text-yellow-500 mt-4"
+            >
               Way2Give
             </h2>
             <h3 class="mt-2 font-bold text-md md:text-lg text-gray-500">
@@ -39,9 +44,12 @@
           >
             Halo,Selamat datang
           </h2>
-          <p class="text-lg text-center md:text-left text-gray-400 font-semibold mt-3">
-            Way2give adalah sebuah platform yang membantu anda mendapatkan
-            dukungan dari penonton live streaming dengan mudah.
+          <p
+            class="text-lg text-center md:text-left text-gray-400 font-semibold mt-3"
+          >
+            Way2give adalah sebuah platform yang memfasilitasi live streamer (
+            YouTube, Twitch, Facebook Live dan platform streaming lainnya )
+            untuk mendapatkan dukungan finansial dari penonton.
           </p>
           <!-- <div
             class="buttonWrapper mt-8 md:mt-8 flex flex-col w-3/4 mx-auto md:mx-0 md:flex-row gap-8 md:gap-8"
@@ -118,8 +126,40 @@
           </p>
         </div>
       </div>
+      
     </div>
+    
+    <div class="px-3 pt-3 pb-5 border-2 bg-white border-turkis mt-12 mx-8 md:mx-0 md:mx-auto max-w-lg">
+    <h2 class="text-center md:text-left text-2xl md:text-3xl font-serif font-bold text-turkis mt-4">Cara Memulai</h2>
+    <br>
+    <ul class="text-lg  md:text-left text-gray-500 font-medium leading-loose">
+      <li>
+        1.Buat akun dengan cara daftar dan verifikasi.
+      </li>
+      <li>
+        2. Setelah ter-verifikasi anda akan mendapatkan link halaman dukungan pribadi anda.
+      </li>
+      <li>
+        3. Share link halaman dukungan pribadi anda.
+      </li>
+      <li>
+        4. Anda siap menerima dukungan finansial dari penonton anda. 
+      </li>
+    </ul>
   </div>
+    <div class="px-3 pt-3 pb-5 border-2 bg-white border-turkis mt-12 mx-8 md:mx-0 md:mx-auto max-w-lg">
+    <h2 class="text-center md:text-left text-2xl md:text-3xl font-serif font-bold text-turkis mt-4">Biaya</h2>
+    <br>
+    <p class="text-lg  md:text-left text-gray-500 font-medium leading-loose">
+      Setiap transaksi masuk akan dikenakan biaya layanan sebesar 5%.
+      <br>
+      Pencairan dana menuju rekening bank/e-wallet streamer akan dikenakan biaya sebesar IDR 5.000
+    </p>
+  </div>
+  </div>
+  <!-- new section -->
+
+
   <Footer />
 </template>
 
