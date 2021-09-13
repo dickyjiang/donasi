@@ -23,29 +23,27 @@
 
     <div class="relative px-12 pt-12 pb-32 mx-auto max-w-5x">
       <div
-        class="flex flex-col md:flex-row gap-10 items-center justify-center  mx-auto md:items-start"
+        class="flex flex-col md:flex-row gap-10 items-center justify-center mx-auto md:items-start"
       >
         <div class="header flex flex-col md:items-start md:max-w-md">
           <div class=" mb-8 flex flex-col items-center">
-            <h2
-              class=" text-5xl lg:text-7xl font-serif font-extrabold text-yellow-500 mt-4"
-            >
+            <h2 class=" text-6xl lg:text-7xl font-serif font-extrabold text-yellow-500 mt-4">
               Way2Give
             </h2>
             <h3 class="mt-2 font-bold text-md md:text-lg text-gray-500">
-              Support Live streaming made easy
+              Get support Live streaming made easy
             </h3>
           </div>
           <h2
-            class="text-center md:text-left text-xl md:text-3xl font-serif font-bold text-turkis "
+            class="text-center md:text-left text-2xl md:text-3xl font-serif font-bold text-turkis mt-4"
           >
             Halo,Selamat datang
           </h2>
-          <p class="text-center md:text-left text-gray-400 font-medium mt-2">
+          <p class="text-lg text-center md:text-left text-gray-400 font-semibold mt-3">
             Way2give adalah sebuah platform yang membantu anda mendapatkan
             dukungan dari penonton live streaming dengan mudah.
           </p>
-          <div
+          <!-- <div
             class="buttonWrapper mt-8 md:mt-8 flex flex-col w-3/4 mx-auto md:mx-0 md:flex-row gap-8 md:gap-8"
           >
             <button
@@ -58,7 +56,7 @@
             >
               <a href="#login-modal">Daftar</a>
             </button>
-          </div>
+          </div> -->
         </div>
 
         <div class="relative pb-12">

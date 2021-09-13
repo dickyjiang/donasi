@@ -7,6 +7,9 @@ import CreateProfile from '../views/CreateProfile.vue'
 import AddDonation from '../views/AddDonation.vue'
 import Display from '../views/Display.vue'
 import UserProfile from '../views/UserProfile.vue'
+import HowItWorks from '../views/HowItWorks.vue'
+import FAQ from '../views/FAQ.vue'
+import AboutUs from '../views/AboutUs.vue'
 import { projectAuth } from '../firebase/config'
 
 // auth guard
@@ -71,11 +74,27 @@ const routes = [
     component: CreateProfile,
   },
   {
-    path: '/userprofile/:id',
+    path: '/userprofile/:id/',
     name: 'UserProfile',
     component: UserProfile,
-    beforeEnter: requireAuth,
-    props: true
+    // beforeEnter: requireAuth,
+    // props: true
+  },
+  {
+    path: '/howitworks',
+    name: 'HowItWorks',
+    component: HowItWorks,
+
+  },
+  {
+    path: '/faq',
+    name: 'FAQ',
+    component: FAQ,
+  },
+  {
+    path: '/aboutUs',
+    name: 'AboutUs',
+    component: AboutUs,
   }
 ]
 

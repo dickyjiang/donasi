@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between rounded shadow-xl mx-auto bg-yellow-400 p-3 my-5">
-      <p class=""> {{ donation.createdAt.toDate()}}</p>
+      <p class=""> {{donation.createdAt}}</p>
       <p class="" > <span class="">IDR</span> {{ donation.amount }}</p>
       <p class="" @click="showDetails = !showDetails">{{ donation.pesan }}</p>
           <h1 class="">{{ donation.displayName }}</h1>
@@ -13,8 +13,7 @@
 <script>
 import { projectFirestore } from '../firebase/config' 
 import { FormatDistanceToNow } from 'date-fns'
-import { computed } from '@vue/reactivity';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import { computed } from 'vue'
 
 
 export default {
@@ -28,18 +27,17 @@ export default {
 
   //coba formated timestamp 
 
-  // setup() {
-  //   const formattedDocuments = computed(() => {
-  //     if (donation.value) {
-  //       return donation.value.map(donation => {
-  //         let time = formatDistanceToNow(donation.createdAt.toDate())
-  //         return { ...donation, createdAt: time}
-  //       })
-  //     }
-  //   })
-  //   return { formattedDocuments }
-  // },
-
+  setup() {
+    const formattedDocuments = computed(() => {
+      if (donation.value) {
+        return donation.value.map(doc => {
+          let time = formatDistanceToNow(doc.createdAt.toDate())
+          return { ...doc, createdAt: time}
+        })
+      }
+    })
+    return { formattedDocuments }
+  },
 
 
   methods: {

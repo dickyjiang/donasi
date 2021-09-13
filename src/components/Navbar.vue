@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="p-3 border-2 rounded bg-white border-gray-400 m-2 shadow-xl"
+    class="p-3 border-2 rounded bg-white border-gray-400 shadow-xl"
     v-if="user"
   >
     <div class="w-full">
@@ -23,6 +23,8 @@
         <div>
           total Donasi
         </div>
+
+        <router-link :to="{ name: 'UserProfile', params:{ id: user.uid}}">Profile anda</router-link> 
 
         <button
           @click="handleClick"
