@@ -1,37 +1,35 @@
 <template>
   <nav
-    class="p-3 border-2 rounded bg-white border-gray-400 shadow-xl"
+    class="p-3 border  bg-white border-gray-400 shadow-lg"
     v-if="user"
   >
     <div class="w-full">
       <div class="flex justify-between items-baseline">
-        <p class="font-bold text-xl">Halo {{ user.displayName }}</p>
+        <p class="font-bold text-lg text-gray-500">Halo {{ user.displayName }}</p>
         <p class="hidden email font-medium text-gray-500">
           logged in as {{ user.email }}{{user.uid}}
         </p>
+        <button
+          @click="handleClick"
+          class=" py-1 px-3 text-center focus:outline-none focus:bg-yellow-800 hover:bg-red-600 hover:text-white rounded  border-gray-500 hover:border-transparent text-base font-semibold text-gray-500 transform hover:-translate-y-1 ease-in-out duration-300 "
+        >
+          Logout
+        </button>
       </div>
       <div class="w-full flex items-center justify-between mt-3">
         <div class="flex  max-w-md">
-          <div class="appearance-none font-semibold  py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-600 bg-yellow-500 rounded border-2 border-gray-700 text-md shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
-            <router-link :to="{ name: 'adddDonation' , params:{ id : user.uid, nama: user.displayName }}">Link Halaman Donasi anda</router-link>
+          <div class="appearance-none font-semibold tracking-tight  py-1 px-3 text-center text-turkis focus:outline-none focus:bg-yellow-600 bg-white rounded border-2 border-turkis shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
+            <router-link :to="{ name: 'adddDonation' , params:{ id : user.uid, nama: user.displayName }}">Halaman Donasi anda</router-link>
           </div>
           <div class="hidden py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-800 rounded border-2 border-gray-700 text-md font-bold shadow-lg transform hover:-translate-y-1 ease-in-out duration-300 ">
             <router-link :to="{ name: 'addProject' }">Add new</router-link>
           </div>
         </div>
 
-        <div>
-          total Donasi
-        </div>
 
-        <router-link :to="{ name: 'UserProfile', params:{ id: user.uid}}">Profile anda</router-link> 
+        <router-link class="text-gray-500 font-semibold" :to="{ name: 'UserProfile', params:{ id: user.uid}}">Profile anda</router-link> 
 
-        <button
-          @click="handleClick"
-          class=" py-2 px-3 mx-2 text-center focus:outline-none focus:bg-yellow-800 hover:bg-red-600 hover:text-white rounded border-2 border-gray-500 hover:border-transparent text-lg font-semibold shadow transform hover:-translate-y-1 ease-in-out duration-300 "
-        >
-          Logout
-        </button>
+        
       </div>
     </div>
   </nav>
