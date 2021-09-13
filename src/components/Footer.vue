@@ -1,24 +1,26 @@
 <template>
-  <div class="w-full pt-8 pb-4 bg-gray-700 text-gray-400 mx-auto">
+  <div class="w-full pt-8 pb-4 bg-gray-800 text-gray-400 mx-auto">
     <div
       class="flex flex-col px-10 justify-between items-center w-full md:max-w-3xl mx-auto text-sm font-serif"
     >
       <div class=" flex justify-between w-full">
         <div class="flex flex-col gap-2 items-center">
           <div>
-            <img class="w-12" src="../assets/logo.png" alt="" />
+             <router-link :to="{ name: 'Welcome' }">
+                <img class="w-12" src="../assets/logo.png"/>
+              </router-link>
           </div>
           <h2 class="font-serif font-bold text-lg">Way2Give</h2>
         </div>
         <ul>
           <li>
-            <router-link :to="{ name: 'HowItWorks' }">F.A.Q.</router-link>
+            <router-link :to="{ name: 'FAQ' }">F.A.Q.</router-link>
           </li>
           <li>
             <router-link :to="{ name: 'HowItWorks' }">How it Works</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'HowItWorks' }"
+            <router-link :to="{ name: 'AboutUs' }"
               >Mengenai Kami</router-link
             >
           </li>
