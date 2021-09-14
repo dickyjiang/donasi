@@ -6,8 +6,8 @@ const getCollection = (collection, uid) => {
   const error = ref(null)
 
   let collectionRef = projectFirestore.collection(collection)
-    .where('uid', '==', uid)
-    .orderBy('createdAt')
+    .where('to_uid', '==', uid)
+    .orderBy('createdAt', 'desc')
 
   const unsub = collectionRef.onSnapshot((snap) => {
     let results = []

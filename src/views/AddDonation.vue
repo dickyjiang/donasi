@@ -1,19 +1,26 @@
 <template>
-<div class="relative py-10 flex flex-col justify-center items-center bg-yellow-50">
+  <div class="relative py-10 flex flex-col justify-center items-center bg-yellow-50">
     <!-- background image pilihan user -->
     <div class="absolute top-0 w-full">
-      <img class="w-full" src="../assets/bg-profile.jpg" alt="">
+      <img
+        class="w-full"
+        src="../assets/bg-profile.jpg"
+        alt=""
+      >
       <!-- <img :src="profiles.avatarUrl"> -->
     </div>
     <div class=" relative z-99 lg:w-2/4 md:w-3/4 pt-4 mt-20 px-2 text-center bg-white shadow-2xl rounded-xl mx-8 pb-10">
       <div class="flex flex-col justify-center items-center py-2">
         <!-- user profile pic -->
         <div class="rounded-full bg-white">
-          <img src="../assets/np_avatar_2309777_5E9FB0.png" alt="">
+          <img
+            src="../assets/np_avatar_2309777_5E9FB0.png"
+            alt=""
+          >
         </div>
         <h2 class="text-2xl md:text-3xl font-bold font-serif my-4">
-            <!-- {{ $route.params.id }} -->
-            {{ $route.params.nama }}
+          <!-- {{ $route.params.id }} -->
+          {{ $route.params.nama }}
         </h2>
       </div>
       <div>
@@ -66,7 +73,11 @@
 
           <div class=" grid gap-4 md:flex md:flex-row md:items-center justify-around items-baseline mt-6 border-2 border-gray-300 p-2 ">
             <div class="p-2">
-              <img class="h-6 mb-3" src="../assets/Logo_ovo_purple.svg" alt="ovo"/>
+              <img
+                class="h-6 mb-3"
+                src="../assets/Logo_ovo_purple.svg"
+                alt="ovo"
+              />
               <input
                 type="radio"
                 name="paymentGateway"
@@ -106,29 +117,28 @@
         </form>
       </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
 import { useRoute } from "vue-router";
 import { timestamp } from "../firebase/config";
 import { projectFirestore } from "../firebase/config";
-import getCollection from '../composables/getCollection';
+import getCollection from "../composables/getCollection";
 
 export default {
-
   setup() {
-    const { error, documents} = getCollection('profiles')
+    const { error, documents } = getCollection("profiles");
 
-    return { error, documents}
+    return { error, documents };
   },
-  
 
   data() {
     return {
       displayName: "",
       pesan: "",
       amount: "",
+      to_uid: "",
     };
   },
 
@@ -139,6 +149,7 @@ export default {
         amount: this.amount,
         pesan: this.pesan,
         createdAt: timestamp(),
+        to_uid: this.$route.params.id,
       };
 
       try {
@@ -146,7 +157,11 @@ export default {
         console.log(res.docs);
         this.$router.push({
           name: "display",
-          query: { rp: donation.amount, kepada: donation.displayName, pesan: donation.pesan },
+          query: {
+            rp: donation.amount,
+            kepada: donation.displayName,
+            pesan: donation.pesan,
+          },
         });
       } catch (err) {
         console.log({ err });
@@ -154,8 +169,5 @@ export default {
     },
   },
   props: ["id", "nama", "profiles"],
-
-  
-  
 };
 </script>
