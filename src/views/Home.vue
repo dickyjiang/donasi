@@ -25,7 +25,7 @@ import { watch } from "vue";
 import getUser from "../composables/getUser";
 import { useRouter } from "vue-router";
 import SingleDonationReportCard from "../components/SingleDonationReportCard.vue";
-import { projectFirestore } from "../firebase/config";
+import getDonations from "../composables/getDonations";
 
 export default {
   name: "Home",
@@ -37,7 +37,9 @@ export default {
   },
 
   async mounted() {
-    await this.getDonations();
+    const { user } = getUser();
+    const { error, documents } = getDonations("donasi", user.value.uid);
+    this.donations = documents;
   },
 
   setup() {
@@ -66,44 +68,7 @@ export default {
       });
       p.complete = !p.complete;
     },
-
-    async getDonations() {
-      try {
-        const res = await projectFirestore
-          .collection("donasi")
-          .orderBy("createdAt", "desc")
-          .get();
-        console.log(res.docs);
-
-        this.donations = res.docs.map((doc) => {
-          // console.log(doc.data())
-          return { ...doc.data(), id: doc.id };
-        });
-      } catch (err) {
-        console.log({ err });
-        // error.value = err.message
-      }
-    },
   },
-
-  // async mounted() {
-  //   const { user } = getUser();
-  //   const { error, documents } = getCollection("messages1", user._value.uid);
-  //   this.projects = documents;
-  // },
-  // methods: {
-  //   handleDelete(id) {
-  //     this.projects = this.projects.filter((project) => {
-  //       return project.id !== id;
-  //     });
-  //   },
-  //   handleComplete(id) {
-  //     let p = this.projects.find((project) => {
-  //       return project.id == id;
-  //     });
-  //     p.complete = !p.complete;
-  //   },
-  // },
 };
 </script>
 
