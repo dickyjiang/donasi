@@ -54,6 +54,7 @@ export default {
     formatDate(value) {
       if (value) {
         return moment(String(value)).format("DD MMM yy hh:mm");
+        // return moment(String(value)).format();
       }
     },
   },
