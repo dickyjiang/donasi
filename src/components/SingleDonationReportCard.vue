@@ -1,12 +1,14 @@
 <template>
-  <div class="flex justify-between rounded shadow-xl mx-auto bg-yellow-400 p-3 my-5">
+  <div class=" justify-between rounded shadow-xl mx-auto bg-yellow-400 p-4 py-3 my-5">
       <p class=""> {{donation.createdAt}}</p>
-      <p class="" > <span class="">IDR</span> {{ donation.amount }}</p>
-      <p class="" @click="showDetails = !showDetails">{{ donation.pesan }}</p>
-          <h1 class="">{{ donation.displayName }}</h1>
-        <button @click="deleteDonation">
-          delete
-        </button>
+      <div class="flex gap-3 justify-between mt-3 items-baseline">
+        <p class="text-xl font-bold" > <span class="">IDR</span> {{ donation.amount }}</p>
+        <p class="font-serif text-lg font-medium" @click="showDetails = !showDetails">{{ donation.pesan }}</p>
+            <h1 class="font-semibold">{{ donation.displayName }}</h1>
+          <!-- <button @click="deleteDonation">
+            delete
+          </button> -->
+      </div>
   </div>
 </template>
 

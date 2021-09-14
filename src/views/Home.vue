@@ -1,7 +1,7 @@
 <template>
   <Navbar />
 
-  <div class="Home mt-10 mb-20 px-2 w-full md:max-w-screen-md mx-auto">
+  <div class="Home mt-10 mb-20 px-2 w-full md:max-w-screen-md mx-auto min-h-screen overflow-x-hidden overflow-y-auto">
     <div v-if="donations.length">
       <div
         v-for="donation in donations"

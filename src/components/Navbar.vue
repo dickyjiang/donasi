@@ -24,7 +24,7 @@
           total Donasi
         </div>
 
-        <router-link :to="{ name: 'UserProfile', params:{ id: user.uid}}">Profile anda</router-link> 
+        <router-link :to="{ name: 'UserProfile', params:{ id: user.uid}}">Profile</router-link> 
 
         <button
           @click="handleClick"
