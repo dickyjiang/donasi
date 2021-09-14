@@ -6,7 +6,7 @@
       <div class=" flex flex-col md:flex-row items-center md:items-start gap-8 justify-between w-full mt-8">
         <div class="flex flex-col gap-2 items-center">
           <div>
-             <router-link :to="{ name: 'Welcome' }">
+             <router-link @click="scrollToTop" :to="{ name: 'Welcome' }">
                 <img class="w-12" src="../assets/logo.png"/>
               </router-link>
           </div>
@@ -15,13 +15,13 @@
 
         <ul class="leading-loose">
           <li>
-            <router-link :to="{ name: 'FAQ' }">F.A.Q.</router-link>
+            <router-link @click="scrollToTop" :to="{ name: 'FAQ' }">F.A.Q.</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'HowItWorks' }">How it Works</router-link>
+            <router-link @click="scrollToTop" :to="{ name: 'HowItWorks' }">How it Works</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'AboutUs' }"
+            <router-link @click="scrollToTop" :to="{ name: 'AboutUs' }"
               >Mengenai Kami</router-link
             >
           </li>
@@ -71,6 +71,17 @@
 
 <script>
 export default {
+
+  methods: { 
+           scrollToTop() {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth',
+                }
+                );
+           },
+           
+        }
   
 };
 </script>
