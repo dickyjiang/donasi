@@ -1,20 +1,22 @@
 <template>
   <div class="flex justify-between rounded shadow-xl mx-auto bg-yellow-400 p-3 my-5">
-      <p class=""> {{donation.createdAt}}</p>
-      <p class="" > <span class="">IDR</span> {{ donation.amount }}</p>
-      <p class="" @click="showDetails = !showDetails">{{ donation.pesan }}</p>
-          <h1 class="">{{ donation.displayName }}</h1>
-        <button @click="deleteDonation">
-          delete
-        </button>
+    <p class=""> {{ formatDate(donation.createdAt.toDate())  }}</p>
+    <p class=""> <span class="">IDR</span> {{ donation.amount }}</p>
+    <p
+      class=""
+      @click="showDetails = !showDetails"
+    >{{ donation.pesan }}</p>
+    <h1 class="">{{ donation.displayName }}</h1>
+    <button @click="deleteDonation">
+      delete
+    </button>
   </div>
 </template>
 
 <script>
-import { projectFirestore } from '../firebase/config' 
-import { FormatDistanceToNow } from 'date-fns'
-import { computed } from 'vue'
-
+import { projectFirestore } from "../firebase/config";
+import { computed } from "vue";
+import moment from "moment";
 
 export default {
   props: ["donation"],
@@ -25,36 +27,38 @@ export default {
     };
   },
 
-  //coba formated timestamp 
-
   setup() {
     const formattedDocuments = computed(() => {
       if (donation.value) {
-        return donation.value.map(doc => {
-          let time = formatDistanceToNow(doc.createdAt.toDate())
-          return { ...doc, createdAt: time}
-        })
+        return donation.value.map((doc) => {
+          let time = formatDistanceToNow(doc.createdAt.toDate());
+          return { ...doc, createdAt: time };
+        });
       }
-    })
-    return { formattedDocuments }
+    });
+    return { formattedDocuments };
   },
-
 
   methods: {
     async deleteDonation() {
       try {
-        await projectFirestore.collection('donasi').doc(this.donation.id).delete();
+        await projectFirestore
+          .collection("donasi")
+          .doc(this.donation.id)
+          .delete();
         this.$emit("delete", this.donation.id);
-      }
-      catch(err) {
-        console.log({err})
+      } catch (err) {
+        console.log({ err });
       }
     },
-
+    formatDate(value) {
+      if (value) {
+        return moment(String(value)).format("DD MMM yy hh:mm");
+      }
+    },
   },
 };
 </script>
 
 <style>
-
 </style>
