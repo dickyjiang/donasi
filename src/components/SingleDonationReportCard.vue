@@ -1,5 +1,4 @@
 <template>
-
   <div class=" justify-between rounded shadow-xl mx-auto bg-yellow-400 p-4 py-3 my-5">
     <p class=""> {{ formatDate(donation.createdAt.toDate())  }}</p>
     <div class="flex gap-3 justify-between mt-3 items-baseline">
@@ -13,6 +12,7 @@
         delete
       </button>
     </div>
+  </div>
 </template>
 
 <script>
