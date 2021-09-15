@@ -74,7 +74,7 @@ const routes = [
     component: CreateProfile,
   },
   {
-    path: '/userprofile/:id/',
+    path: '/userprofile/:id',
     name: 'UserProfile',
     component: UserProfile,
     // beforeEnter: requireAuth,
