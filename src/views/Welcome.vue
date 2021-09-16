@@ -1,7 +1,5 @@
 <template>
-  <!-- <div>
     <Navbar />
-  </div> -->
   <div class="w-full bg-red-700 text-white py-3 text-center font-semibold">
     *Under Development* website ini masih dalam status percobaan!
   </div>
@@ -158,9 +156,6 @@
   </div>
   </div>
   <!-- new section -->
-
-
-  <Footer />
 </template>
 
 <script>

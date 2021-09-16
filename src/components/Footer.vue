@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full pt-8 pb-4 bg-gray-800 text-gray-400 mx-auto">
+  <div class="w-full pt-4 pb-4 bg-gray-800 text-gray-400 mx-auto">
     <div
       class="flex flex-col px-10 justify-between items-center w-full md:max-w-3xl mx-auto text-sm font-serif"
     >
@@ -13,18 +13,19 @@
           <h2 class="font-serif font-bold text-lg ">Way2Give</h2>
         </div>
 
-        <ul class="leading-loose">
-          <li>
-            <router-link @click="scrollToTop" :to="{ name: 'FAQ' }">F.A.Q.</router-link>
-          </li>
-          <li>
-            <router-link @click="scrollToTop" :to="{ name: 'HowItWorks' }">How it Works</router-link>
-          </li>
-          <li>
-            <router-link @click="scrollToTop" :to="{ name: 'AboutUs' }"
-              >Mengenai Kami</router-link
-            >
-          </li>
+        <div class="flex justify-center gap-8 items-start">
+          <ul class="leading-loose">
+            <li>
+              <router-link @click="scrollToTop" :to="{ name: 'FAQ' }">F.A.Q.</router-link>
+            </li>
+            <li>
+              <router-link @click="scrollToTop" :to="{ name: 'HowItWorks' }">How it Works</router-link>
+            </li>
+            <li>
+              <router-link @click="scrollToTop" :to="{ name: 'AboutUs' }"
+                >Mengenai Kami</router-link
+              >
+            </li>
         </ul>
         <div class="flex flex-col gap-4">
           <div class="flex gap-2">
@@ -64,6 +65,9 @@
           </div>
         </div>
       </div>
+        </div>
+
+        
       <p class="mt-8">Palapa After School © 2021</p>
     </div>
   </div>

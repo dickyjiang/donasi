@@ -1,11 +1,20 @@
 <template>
-<div class=" min-h-screen bg-white">
-  <div class="flex-1 mx-auto">
-      <router-view/>
-
+<div class="flex flex-col justify-between">
+  <!-- <Navbar/> -->
+  <router-view/>
+  <Footer/>
   </div>
-</div>
 </template>
+
+<script>
+  import Navbar from './components/Navbar.vue';
+  import Footer from './components/Footer.vue'
+
+  export default {
+  components: { Navbar, Footer },
+  }
+
+</script>
 
 <style>
 #app {
