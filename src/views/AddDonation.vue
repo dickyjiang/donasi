@@ -27,13 +27,13 @@
         <form @submit.prevent="handleSubmit">
           <div class=" pt-4 pb-4 px-4 bg-gray-200">
             <div class="w-full flex flex-col md:flex-row justify-between gap-4 my-3 items-center">
-              <div class="py-2 px-3 w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700  ">
+              <div @click="amount = '100000'" class="py-2 px-3 w-full md:w-1/3  bg-yellow-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700  ">
                 10.000
               </div>
-              <div class=" py-2 px-3  w-full md:w-1/3  bg-green-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
+              <div @click="amount = '500000'" class=" py-2 px-3  w-full md:w-1/3  bg-green-500 border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
                 50.000
               </div>
-              <div class=" py-2 px-3  w-full md:w-1/3  bg-turkis border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
+              <div @click="amount = '1000000'" class=" py-2 px-3  w-full md:w-1/3  bg-turkis border-2 shadow-sm border-gray-600 text-xl font-bold focus:ring-2 focus:ring-yellow-700 ">
                 100.000
               </div>
 
@@ -44,6 +44,7 @@
               required
               placeholder="0 IDR"
               v-model="amount"
+               @blur="onBlurNumber"
             />
             <p class=" italic mt-4 text-sm"> Maksimal nomimal pertransaksi IDR 20.000.000</p>
           </div>
@@ -167,6 +168,38 @@ export default {
         console.log({ err });
       }
     },
+      // add thousand separator - tapi belum jalan
+    // onBlurNumber() {
+    //         this.visible = false;
+    //         /** 
+    //          * temp is used to holding the original 
+    //          * value before separator is applied
+    //          */
+    //         this.temp = this.amount;
+    //         /** 
+    //          * this.thousandSeprator is a function used to apply                      separator into user input 
+            
+    //          */
+    //         this.amount = this.thousandSeprator(this.amount);
+    //     },
+    //     onFocusText() {
+    //         this.visible = true;
+    //         /** 
+    //          * temp is used to holding the original 
+    //          * value before separator is applied
+    //          */
+    //         this.amount = this.temp;
+    //     },
+
+    //     /*Replace numbers with comma separated value*/
+    //    thousandSeprator(amount) {
+    //        if (amount !== '' || amount !== undefined || amount !== 0  || amount !== '0' || amount !== null) {
+    //     return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //        } else {
+    //            return amount;
+    //        }
+    //    },
+
   },
   props: ["id", "nama", "profiles"],
 };
